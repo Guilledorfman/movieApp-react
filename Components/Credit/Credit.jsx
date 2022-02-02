@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Credit.css'
 
+import { MovieListContext } from '../../context/MovieListContext';
+
 const Credit = ({name, id, photo, job}) => {
+
+  const { showMovieList, getFetch, activeDisplay, setActiveDisplay, setPersonID, personID } = useContext(MovieListContext)
 
   const { results, setResults } = useState([])
 
 
   const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
-
   const pickCredit = async (people_id) =>{
-    const response = await fetch (`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_people=${people_id}&sort_by=popularity.desc`)
-    const data = await response.json()
-    console.log(data);
+    setPersonID(people_id)
+    setActiveDisplay('movieList')
 }
   return(
       <div className='credit' onClick={() => pickCredit(id)}>

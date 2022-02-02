@@ -1,15 +1,16 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { MovieListContext } from '../../context/MovieListContext';
 import CreditsCont from '../CreditsCont/CreditsCont';
+import MovieListCont from '../MovieListCont/MovieListCont';
 import MovieStartCont from '../MovieStartCont/MovieStartCont';
 
 const MainCont = () => {
 
-    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID } = useContext(MovieListContext)
+    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, personID } = useContext(MovieListContext)
 
-    useEffect(()=>{
-        // console.log(movieList);
-    },[movieList])
+    // useEffect(()=>{
+    //     console.log(personID);
+    // },[personID])
 
     function changeActive(e){
         setActiveDisplay(e)
@@ -22,6 +23,9 @@ const MainCont = () => {
                 break;
             case 'creditsList':
                 return(<CreditsCont movie_ID={movieID}/>);
+                break;
+            case 'movieList':
+                return(<MovieListCont id={personID}/>);
                 break;
         }
     }

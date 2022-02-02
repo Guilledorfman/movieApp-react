@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Credit from '../Credit/Credit';
+import { MovieListContext } from '../../context/MovieListContext';
 
 const CreditsList = ({data}) => {
+
+
 
       const credits = data.map(e=>{
         let photo;

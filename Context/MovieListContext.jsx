@@ -9,7 +9,8 @@ function MovieListContextProvider( { children } ) {
     const [ movieID, setMovieID ] = useState(12)
     const [ activeDisplay, setActiveDisplay ] = useState('movie')
     const [ formatedCredits, setFormatedCredits ] = useState([]);
-
+    
+    const [ personID, setPersonID ] = useState(0)
 
     function showMovieList() {
         // console.log(movieList);
@@ -67,6 +68,8 @@ function MovieListContextProvider( { children } ) {
             setActiveDisplay,
             movieID,
             setMovieID,
+            personID,
+            setPersonID,
             formatCredits,
             creditsList,
             // getFetchCredits,
