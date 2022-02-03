@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import Credit from '../Credit/Credit';
 import { MovieListContext } from '../../context/MovieListContext';
+import './CreditsList.css'
 
 const CreditsList = ({data}) => {
 
@@ -26,7 +27,7 @@ const CreditsList = ({data}) => {
 
   return (
   
-    <div>
+    <div className="credits_cont">
       {credits}
     </div>
     

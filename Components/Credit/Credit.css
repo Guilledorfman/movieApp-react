@@ -5,6 +5,8 @@
     align-items: center;
     margin-bottom: 25px;
     margin-top: 25px;
+    width: 130px;
+    text-align: center;
 }
 
 .credit>img{

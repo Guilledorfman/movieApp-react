@@ -1,5 +1,5 @@
 .movie-start-img{
-    width: 70%;
+    max-width: 200px;
 }
 .movie-start{
     display: flex;

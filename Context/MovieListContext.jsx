@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 export const MovieListContext = createContext([]);
 
@@ -6,7 +6,8 @@ function MovieListContextProvider( { children } ) {
 
     const [movieList, setMovieList] = useState([])
     const [creditsList, setCreditsList] = useState({})
-    const [ movieID, setMovieID ] = useState(12)
+    const [ movieID, setMovieID ] = useState(2)
+    const [ endMovieID, setEndMovieID ] = useState(2)
     const [ activeDisplay, setActiveDisplay ] = useState('movie')
     const [ formatedCredits, setFormatedCredits ] = useState([]);
     
@@ -17,6 +18,14 @@ function MovieListContextProvider( { children } ) {
         
     }
 
+    // useEffect(()=>{
+    //     console.log(movieID);
+    // }, [movieID])
+
+    function compareIDs(id){
+        id === endMovieID ? console.log('GANASTE') : console.log('segui jugando')
+        // console.log('compareIDS');
+    }
 
     async function getFetch(URL) { 
         // console.log(`hacer fetch en la url: ${URL}`);
@@ -74,6 +83,9 @@ function MovieListContextProvider( { children } ) {
             creditsList,
             // getFetchCredits,
             formatedCredits,
+            endMovieID,
+            setEndMovieID,
+            compareIDs,
             
             }}>
             { children }

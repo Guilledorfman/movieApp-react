@@ -1,8 +1,9 @@
 import React from 'react';
 import PersonMovie from '../PersonMovie/PersonMovie';
+import './MovieList.css'
 
 const MovieList = ({data}) => {
-    console.log(data);
+
     const movieList = data.results.map(e=>{
         let IMG_PATH = `https://image.tmdb.org/t/p/w500${e.poster_path}`
         return(
@@ -12,9 +13,9 @@ const MovieList = ({data}) => {
 
   return (
     
-    <>
+    <div className="MovieList_cont">
         {movieList}
-    </>
+    </div>
     
     );
 };
