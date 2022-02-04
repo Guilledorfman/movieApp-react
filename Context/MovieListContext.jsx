@@ -10,6 +10,8 @@ function MovieListContextProvider( { children } ) {
     const [ endMovieID, setEndMovieID ] = useState(2)
     const [ activeDisplay, setActiveDisplay ] = useState('movie')
     const [ formatedCredits, setFormatedCredits ] = useState([]);
+    const [ timeLine, setTimeLine ] = useState([])
+    const [ goalMovie, setGoalMovie ] = useState({})
     
     const [ personID, setPersonID ] = useState(0)
 
@@ -19,12 +21,16 @@ function MovieListContextProvider( { children } ) {
     }
 
     // useEffect(()=>{
-    //     console.log(movieID);
-    // }, [movieID])
+    //     console.log(goalMovie);
+    // }, [goalMovie])
 
     function compareIDs(id){
-        id === endMovieID ? console.log('GANASTE') : console.log('segui jugando')
-        // console.log('compareIDS');
+        id === endMovieID ?  showTimeLine() : <></>
+    }
+
+    function showTimeLine(){
+        addToTimeLine(goalMovie.img, goalMovie.title, goalMovie.subtitle, goalMovie.id)
+        setActiveDisplay('win')
     }
 
     async function getFetch(URL) { 
@@ -42,7 +48,20 @@ function MovieListContextProvider( { children } ) {
     // }
 
 
+    class Step {
+        constructor(img, title, subtitle, id){
+            this.img = img;
+            this.title = title;
+            this.subtitle = subtitle;
+            this.id = id;
+        }
+    }
 
+    function addToTimeLine(img, title, subtitle, id){
+
+        let newStep = new Step(img, title, subtitle, id);
+        setTimeLine([...timeLine, newStep])
+    }
 
     function formatCredits(movieCredits){
         let director;
@@ -86,6 +105,10 @@ function MovieListContextProvider( { children } ) {
             endMovieID,
             setEndMovieID,
             compareIDs,
+            addToTimeLine,
+            timeLine,
+            goalMovie,
+            setGoalMovie,
             
             }}>
             { children }

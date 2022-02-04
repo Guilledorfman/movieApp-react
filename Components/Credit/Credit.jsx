@@ -5,13 +5,15 @@ import { MovieListContext } from '../../context/MovieListContext';
 
 const Credit = ({name, id, photo, job}) => {
 
-  const { showMovieList, getFetch, activeDisplay, setActiveDisplay, setPersonID, personID } = useContext(MovieListContext)
+  const { showMovieList, getFetch, activeDisplay, setActiveDisplay, setPersonID, personID, addToTimeLine } = useContext(MovieListContext)
 
   const { results, setResults } = useState([])
 
 
   const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
+
   const pickCredit = async (people_id) =>{
+    addToTimeLine(photo, name, job, id)
     setPersonID(people_id)
     setActiveDisplay('movieList')
 }

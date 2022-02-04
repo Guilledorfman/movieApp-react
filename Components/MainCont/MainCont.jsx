@@ -4,6 +4,7 @@ import CreditsCont from '../CreditsCont/CreditsCont';
 import MovieEndCont from '../MovieEndCont/MovieEndCont';
 import MovieListCont from '../MovieListCont/MovieListCont';
 import MovieStartCont from '../MovieStartCont/MovieStartCont';
+import TimeLineCont from '../TimeLineCont/TimeLineCont';
 
 const MainCont = () => {
 
@@ -26,13 +27,17 @@ const MainCont = () => {
             case 'movieList':
                 return(<MovieListCont id={personID}/>);
                 break;
+            case 'win':
+                return(<TimeLineCont/>);
+                break;
         }
     }
 
   return (
 
       <>
-        <MovieEndCont/>
+      { activeDisplay === 'win' ? <></> : <MovieEndCont/> }
+        
       { 
         renderSwitch(activeDisplay)
     }
