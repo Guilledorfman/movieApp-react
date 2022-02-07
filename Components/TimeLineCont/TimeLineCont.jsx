@@ -16,7 +16,8 @@ const TimeLineCont = () => {
 
   return (
       <div className="TimeLineCont">
-      <h2>This is your path</h2>
+      <h2>{timeLine.length - 2} is your best path.</h2>
+        <h3>See if you can find a shorter path!</h3>
         {showTimeLine}
       </div>
 

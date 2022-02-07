@@ -42,7 +42,7 @@ const Level = ({movieA, movieB, setSelected}) => {
 
   return <div className='level' onClick={()=>pickMovies(movieA, movieB)}>
             <div className="level1">
-                <div className="lvl-info">
+                <div className="lvl-info info1">
                     <h3>{aMovie.title}</h3>
                     <h4>{aMovie.release_date}</h4>
                 </div>
@@ -53,10 +53,10 @@ const Level = ({movieA, movieB, setSelected}) => {
             </b>
             <div className="level2">
                 <img src={IMG_PATH2}  alt="" />
-                    <div className="lvl-info">
-                        <h3>{bMovie.title}</h3>
-                        <h4>{bMovie.release_date}</h4>
-                    </div>
+                <div className="lvl-info info2">
+                    <h3>{bMovie.title}</h3>
+                    <h4>{bMovie.release_date}</h4>
+                </div>
                 
             </div>
              

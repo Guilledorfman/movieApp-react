@@ -4,7 +4,24 @@
     justify-content: center;
     margin-bottom: 30px;
 }
+.TimeLineCont>h3{
+    font-size: 1rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.TimeLineCont>.timeline-step-cont:last-child>.timeline-step{
+    
+    box-shadow: rgba(180, 175, 175, .4) 0px 0px 100px 10px, rgb(255, 243, 139) 0px 0px 0px 4px;
+
+}
 .TimeLineCont>.timeline-step-cont:last-child>.line{
+    
+    display: none;
+
+}
+.TimeLineCont>.timeline-step-cont:last-child>.timeline-step>.index{
     
     display: none;
 

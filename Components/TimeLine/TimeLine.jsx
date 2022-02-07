@@ -18,11 +18,12 @@ const TimeLine = ({img, title, subtitle, index}) => {
   
   return (
     <div className={stepClass}>
-      <div className="number">
-      </div>
       <div className="timeline-step">
           <img src={img}></img>
-          <h4 className='index'>{index+1}</h4>
+          {index === 0 ? <></> :
+          
+          <h4 className='index'>{index}</h4>
+          }
           <div className="info">
             <h2>{title}</h2>
             <h3>{subtitle}</h3>

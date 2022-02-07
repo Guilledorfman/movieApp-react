@@ -4,31 +4,72 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    /* background-color: rgb(143, 143, 143); */
+    padding: 10px;
 }
 .level:hover{
     background-color: rgb(116, 113, 113);
     cursor: pointer;
 }
 .level>b{
-    font-size: 3rem;
+    font-size: 1rem;
 }
 .level1>img, .level2>img{
-    width: 100px;
+    width: 35%;
+    /* min-width: 50px; */
+    max-width: 70px;
 }
-.level{
-    width: 100%;
-}
+
 .level1, .level2{
-    width: 300px;
+    width: 50%;
+    height: 110px;
     /* max-width: 300px; */
     display: flex;
     /* flex-direction: column; */
     align-items: center;
 }
+.level1{
+    /* background-color: red; */
+}
+.level2{
+    /* background-color: green; */
+}
 .level1>img{
     margin-left: auto;
 }
 .lvl-info{
-    /* font-size: 1.4rem; */
-    /* text-align: center; */
+    background-color: rgb(48, 48, 48);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 100%;
+    height: 100%;
+    font-size: .5rem;
+    /* overflow: hidden; */
+}
+.level2.lvl-info{
+    background-color: red;
+}
+.info1{
+    margin-right: 20px;
+    align-items: flex-end;
+    text-align: center;
+}
+.info2{
+    margin-left: 20px;
+    
+}
+.lvl-info>h3{
+    background-color: rgb(17, 16, 16);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: .7rem;
+}
+.lvl-info>h4{
+    font-size: 1rem;
+    margin: auto;
 }

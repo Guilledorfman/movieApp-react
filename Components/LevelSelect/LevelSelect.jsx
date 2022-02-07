@@ -52,23 +52,16 @@ const LevelSelect = () => {
             <MainCont/>
             :
             <>
-            {/* <h1 className="title">Movie Game</h1>
-            <div className="levels-cont">
-              <h2>Challenges</h2>
-              <div className="levels">
-                <button className="level" onClick={()=>pickMovies(120, 671)}>
-                  <div>
-                    lotr
-                  </div>
-                  <div>
-                    hp
-                  </div>
-                </button>
-                <button className="level" onClick={()=>pickMovies(36647, 603)}>BLADE to MATRIX</button>
-                <button className="level" onClick={()=>pickMovies(497, 10734)}>GREEN MILE to ESCAPE FROM ALCATRAZ</button>
-                <button className="level" onClick={()=>pickMovies(11, 152)}>STAR WARS to STAR TREK</button>
+            <h1 className="title">Movie Game</h1>
+              <h2 className="challenges-title">Pick two movies at random:</h2>
+              <div className="random-cont">
+
               </div>
-            </div> */}
+            <div className="levels-cont">
+              <h2 className="challenges-title">Or pick one of these challenges:</h2>
+              <div className="levels">
+              </div>
+            </div>
             <LevelsCont lvls={lvls} setSelected={setSelected}/>
             </>
         }
