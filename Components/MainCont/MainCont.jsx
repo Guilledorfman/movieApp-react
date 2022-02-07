@@ -43,6 +43,7 @@ const MainCont = () => {
     }
         <button onClick={()=>changeActive('movie')}>MOVIE</button>
         <button onClick={()=>changeActive('creditsList')}>CREDITS LIST</button>
+        <button onClick={()=>changeActive('win')}>timeline</button>
     </>
   );
 };

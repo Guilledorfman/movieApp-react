@@ -1,0 +1,34 @@
+.level{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.level:hover{
+    background-color: rgb(116, 113, 113);
+    cursor: pointer;
+}
+.level>b{
+    font-size: 3rem;
+}
+.level1>img, .level2>img{
+    width: 100px;
+}
+.level{
+    width: 100%;
+}
+.level1, .level2{
+    width: 300px;
+    /* max-width: 300px; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+}
+.level1>img{
+    margin-left: auto;
+}
+.lvl-info{
+    /* font-size: 1.4rem; */
+    /* text-align: center; */
+}

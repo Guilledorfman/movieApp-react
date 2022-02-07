@@ -1,0 +1,11 @@
+.TimeLineCont>h2{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.TimeLineCont>.timeline-step-cont:last-child>.line{
+    
+    display: none;
+
+}

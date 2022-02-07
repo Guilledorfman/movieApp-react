@@ -1,11 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './TimeLine.css'
 
-const TimeLine = ({img, title, subtitle}) => {
+
+const TimeLine = ({img, title, subtitle, index}) => {
+
+  const [ stepClass, setStepClass ] = useState('timeline-step-cont')
+  const [ lineClass, setLineClass ] = useState('line')
+
+  setTimeout(()=>{
+    setStepClass('timeline-step-cont visible')
+  },[index * 600])
+
+  setTimeout(()=>{
+    
+    setLineClass('line visible')
+  },[index * 500])
+  
   return (
-    <div>
-        <img src={img}></img>
-        <h1>{title}</h1>
-        <h2>{subtitle}</h2>
+    <div className={stepClass}>
+      <div className="number">
+      </div>
+      <div className="timeline-step">
+          <img src={img}></img>
+          <h4 className='index'>{index+1}</h4>
+          <div className="info">
+            <h2>{title}</h2>
+            <h3>{subtitle}</h3>
+          </div>
+      </div>
+      <div className={lineClass}></div>
     </div>
   )
   
