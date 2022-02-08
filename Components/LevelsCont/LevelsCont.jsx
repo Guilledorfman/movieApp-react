@@ -3,7 +3,7 @@ import Level from '../Level/Level';
 import './LevelsCont.css'
 
 const LevelsCont = ({lvls, setSelected}) => {
-    // const IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`
+
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     
     

@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import { MovieListContext } from '../../context/MovieListContext';
 import LevelsCont from '../LevelsCont/LevelsCont';
 import MainCont from '../MainCont/MainCont';
+import RandomMoviesCont from '../RandomMoviesCont/RandomMoviesCont';
 import './LevelSelect.css'
 
 const LevelSelect = () => {
@@ -55,7 +56,7 @@ const LevelSelect = () => {
             <h1 className="title">Movie Game</h1>
               <h2 className="challenges-title">Pick two movies at random:</h2>
               <div className="random-cont">
-
+                <RandomMoviesCont setSelected={setSelected}/>
               </div>
             <div className="levels-cont">
               <h2 className="challenges-title">Or pick one of these challenges:</h2>
