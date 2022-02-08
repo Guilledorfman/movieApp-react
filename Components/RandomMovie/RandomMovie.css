@@ -6,15 +6,23 @@
     display: flex;
 }
 
+.randomLoading>i{
+    font-size: 5rem;
+    margin: auto;
+}
+
 
 .randomMovie{
     position: relative;
     width: 235px;
+    min-height: 300px;
     border: 2px solid rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
 }
 .randomMovie-info{
+    height: 70px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -22,7 +30,7 @@
     background-color: black;
 }
 .randomMovie-info>h3{
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 0;
     text-align: center;
 }

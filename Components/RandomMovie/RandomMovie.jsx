@@ -8,19 +8,28 @@ display: block;
 margin: auto;
 background-color: black;
 `;
-const RandomMovie = ({movie, loading}) => {
+const RandomMovie = ({movie, loading, show, clickFn}) => {
 
-    // const [ isLoading, setIsLoading ] = useState(loading);
 
     let IMG_PATH = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
 
   return <div className="randomMovie">
-
     { loading ? <>
-      <div className="randomLoading">
+      {
+        show ?
+        <div className="randomLoading">
+          
         <PuffLoader color='white' loading={loading} css={override} size={100} />
       </div>
+
+        :
+        <div  onClick={clickFn} >
+              <div className="randomLoading">
+                <i className="fas fa-plus"></i>
+              </div>
+        </div>
+      }
     
     
     </> : <></>}
@@ -34,7 +43,7 @@ const RandomMovie = ({movie, loading}) => {
       </>
       }
       
-      </div>;
+      </div>
 };
 
 export default RandomMovie;

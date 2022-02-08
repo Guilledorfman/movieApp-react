@@ -49,7 +49,7 @@ const Level = ({movieA, movieB, setSelected}) => {
                 <img src={IMG_PATH1}  alt="" />
             </div>
             <b>
-            ➡️
+                <i className="fas fa-arrow-right"></i>
             </b>
             <div className="level2">
                 <img src={IMG_PATH2}  alt="" />

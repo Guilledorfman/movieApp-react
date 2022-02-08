@@ -9,6 +9,9 @@ const RandomMoviesCont = ({movieA, movieB, setSelected}) => {
 
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
 
+    const [showMovieA, setShowMovieA] = useState(false);
+    const [showMovieB, setShowMovieB] = useState(false);
+
     const [loadingA, setLoadingA] = useState(true);
     const [loadingB, setLoadingB] = useState(true);
 
@@ -37,40 +40,53 @@ const RandomMoviesCont = ({movieA, movieB, setSelected}) => {
     const randomLimit = 1000;
 
     useEffect(()=>{
-        ( async function(){
-            setLoadingA(true)
-            let data = await fetch(APIA).then(res=> res.json());
-            data.title === undefined || data.poster_path === undefined ? getRandomA() : <></>;
-            setAMovie(data);
-            setLoadingA(false)
-        })();
+        if (showMovieA === true){
+            ( async function(){
+    
+                setLoadingA(true)
+                let data = await fetch(APIA).then(res=> res.json());
+                data.title === undefined || data.poster_path === undefined ? getRandomA() : <></>;
+                setAMovie(data);
+                setLoadingA(false)
+                
+               
+                
+            })();
+        }
     },[idMovieA])
 
     useEffect(()=>{
-        ( async function(){
-            setLoadingB(true)
-            let data = await fetch(APIB).then(res=> res.json());
-            data.title === undefined || data.poster_path === undefined ? getRandomB() : <></>;
-            setBMovie(data)
-            setLoadingB(false)
+        if (showMovieB === true){
+            ( async function(){
+                setLoadingB(true)
+                let data = await fetch(APIB).then(res=> res.json());
+                data.title === undefined || data.poster_path === undefined ? getRandomB() : <></>;
+                setBMovie(data)
+                setLoadingB(false)
 
 
-        })();
+            })();
+        }
     },[idMovieB])
 
 function getRandom(){
+    setShowMovieA(true)
+    setShowMovieB(true)
     let numeroRandom1 = Math.floor(Math.random()*randomLimit);
     let numeroRandom2 = Math.floor(Math.random()*randomLimit);
     
     numeroRandom1 === numeroRandom2 ? numeroRandom2 = Math.floor(Math.random()*randomLimit) : (setIdMovieA(numeroRandom1), setIdMovieB(numeroRandom2))
     
 }
-
+function prueba(){
+    console.log('probando');
+}
 function getRandomA(){
     setLoadingA(true)
     let numeroRandom1 = Math.floor(Math.random()*randomLimit);
     numeroRandom1 === idMovieB ? numeroRandom1 = Math.floor(Math.random()*randomLimit) : (setIdMovieA(numeroRandom1))
     }
+
 function getRandomB(){
     setLoadingB(true)
     let numeroRandom2 = Math.floor(Math.random()*randomLimit);
@@ -86,12 +102,12 @@ function getRandomB(){
   return <>
         <div className="randommovie-cont">
             <div className="randommovies-img">
-                <RandomMovie movie={aMovie} loading={loadingA}/>
+                <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} clickFn={getRandomA}/>
                 <button onClick={()=>pickMovies(idMovieA, idMovieB)}>PLAY</button>
-                <RandomMovie movie={bMovie} loading={loadingB}/>
+                <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB}/>
             </div>
-            <button onClick={getRandom}>GET RANDOM</button>
-        </div>;
+            <button onClick={getRandom}>GET TWO RANDOM MOVIES</button>
+        </div>
   </>
   
 };
