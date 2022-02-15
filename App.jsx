@@ -1,5 +1,5 @@
 import MovieEndCont from "./Components/MovieEndCont/MovieEndCont"
-import './App.css'
+import './App.scss'
 import MovieStartCont from "./Components/MovieStartCont/MovieStartCont"
 import MovieListContextProvider from "./context/MovieListContext"
 import MainCont from "./Components/MainCont/MainCont"

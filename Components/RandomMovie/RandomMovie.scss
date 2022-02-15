@@ -1,0 +1,56 @@
+@import '../../global.scss';
+
+.randomLoading{
+    width: 100%;
+    height: 100%;
+    // background-color: black;
+    background-color: $mainColor;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $secondaryColor;
+}
+
+
+.randomMovie{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    outline: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .randomMovie-info{
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-family: $mainFont;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        
+        h3{
+            background-color: black;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        h5{
+            background-color: black;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+}
+.randomImg{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}

@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import RandomMovie from '../RandomMovie/RandomMovie';
-import './RandomMoviesCont.css'
+import './RandomMoviesCont.scss'
 import { MovieListContext } from '../../context/MovieListContext';
 
 const RandomMoviesCont = ({movieA, movieB, setSelected}) => {
@@ -103,10 +103,10 @@ function getRandomB(){
         <div className="randommovie-cont">
             <div className="randommovies-img">
                 <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} clickFn={getRandomA}/>
-                <button onClick={()=>pickMovies(idMovieA, idMovieB)}>PLAY</button>
+                    <button onClick={getRandom}>GET TWO RANDOM MOVIES</button>
                 <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB}/>
             </div>
-            <button onClick={getRandom}>GET TWO RANDOM MOVIES</button>
+                { showMovieA && showMovieB ? <button className="play" onClick={()=>pickMovies(idMovieA, idMovieB)}> PLAY </button> : <></> }
         </div>
   </>
   
