@@ -1,5 +1,11 @@
+@import './global.scss';
+
 .App{
   width: 100vw;
-  background-color: rgb(70, 68, 73);
   color: white;
+  background-color: rgba(12, 5, 37, .9); 
+  background-blend-mode: darken;
+  background-image: url(./PngItem_2229031.png);
+  background-size: 500px;
+
 }
