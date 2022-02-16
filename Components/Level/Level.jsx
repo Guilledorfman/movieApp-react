@@ -1,13 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
-import { MovieListContext } from '../../context/MovieListContext';
+import { Link } from 'react-router-dom';
+// import { MovieListContext } from '../../context/MovieListContext';
 import './Level.css'
 
-const Level = ({movieA, movieB, setSelected}) => {
+const Level = ({movieA, movieB}) => {
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     const APIA = `https://api.themoviedb.org/3/movie/${movieA}?api_key=${API_KEY}&include_adult=false`
     const APIB = `https://api.themoviedb.org/3/movie/${movieB}?api_key=${API_KEY}&include_adult=false`
 
-    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, setMovieID, endMovieID, setEndMovieID, personID } = useContext(MovieListContext)
+    // const { setMovieID, setEndMovieID } = useContext(MovieListContext)
 
     const [aMovie, setAMovie] = useState({})
     const [bMovie, setBMovie] = useState({})
@@ -34,33 +35,34 @@ const Level = ({movieA, movieB, setSelected}) => {
     },[APIB])
 
 
-    function pickMovies(a, b){
-        setMovieID(a);
-        setEndMovieID(b);
-        setSelected(true)
-    }
+    // function pickMovies(a, b){
+    //     setMovieID(a);
+    //     setEndMovieID(b);
+    //     setSelected(true)
+    // }
 
-  return <div className='level' onClick={()=>pickMovies(movieA, movieB)}>
-            <div className="level1">
-                <div className="lvl-info info1">
-                    <h3>{aMovie.title}</h3>
-                    <h4>{aMovie.release_date}</h4>
+  return <>
+            <Link className='level' to={`/play/${movieA}/${movieB}`}>
+                <div className="level1">
+                    <div className="lvl-info info1">
+                        <h3>{aMovie.title}</h3>
+                        <h4>{aMovie.release_date}</h4>
+                    </div>
+                    <img src={IMG_PATH1}  alt="" />
                 </div>
-                <img src={IMG_PATH1}  alt="" />
-            </div>
-            <b>
-                <i className="fas fa-arrow-right"></i>
-            </b>
-            <div className="level2">
-                <img src={IMG_PATH2}  alt="" />
-                <div className="lvl-info info2">
-                    <h3>{bMovie.title}</h3>
-                    <h4>{bMovie.release_date}</h4>
+                <b>
+                    <i className="fas fa-arrow-right"></i>
+                </b>
+                <div className="level2">
+                    <img src={IMG_PATH2}  alt="" />
+                    <div className="lvl-info info2">
+                        <h3>{bMovie.title}</h3>
+                        <h4>{bMovie.release_date}</h4>
+                    </div>
+                    
                 </div>
-                
-            </div>
-             
-        </div>;
+            </Link>
+        </>;
 };
 
 export default Level;

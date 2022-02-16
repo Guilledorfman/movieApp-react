@@ -1,18 +1,18 @@
-import React, {useEffect, useState, useContext} from 'react'
-import { MovieListContext } from '../../context/MovieListContext';
+import React, { useEffect, useState } from 'react'
+// import { MovieListContext } from '../../context/MovieListContext';
 import './MovieEnd.css'
 
 const MovieEnd = ({data, id}) => {
 
-    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, setMovieID, endMovieID, setEndMovieID, personID, addToTimeLine } = useContext(MovieListContext)
+    // const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, setMovieID, endMovieID, setEndMovieID, personID, addToTimeLine } = useContext(MovieListContext)
     
     const IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`
-    const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
+    // const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     const [movieID, setMovieId] = useState(id);
 
 
 
-    const [movieCredits, setMovieCredits] = useState({})
+    // const [movieCredits, setMovieCredits] = useState({})
 
     useEffect(()=>{
         setMovieId(data.id);

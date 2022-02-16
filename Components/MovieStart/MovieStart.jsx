@@ -5,14 +5,15 @@ import { MovieListContext } from '../../context/MovieListContext';
 import './MovieStart.css'
 
 const MovieStart = ({data, id}) => {
-  const { showMovieList, getFetch, activeDisplay, setActiveDisplay, addToTimeLine } = useContext(MovieListContext)
+
+  const { addToTimeLine } = useContext(MovieListContext)
 
   const IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`
   const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
   const API = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
 
-    const [movieCredits, setMovieCredits] = useState({});
-    const [movieCreditsBoolean, setMovieCreditsBoolean] = useState(false);
+    // const [movieCredits, setMovieCredits] = useState({});
+    // const [movieCreditsBoolean, setMovieCreditsBoolean] = useState(false);
 
     const [ showCredits, setShowCredits ] = useState(false)
 
@@ -20,11 +21,14 @@ const MovieStart = ({data, id}) => {
 
     const getCredits = async function(){
 
+
+      addToTimeLine(IMG_PATH, data.title, data.release_date, id)
       
-      let data = await fetch(API).then(res=> res.json());
+      await fetch(API).then(res=> res.json());
       setShowCredits(true)
+      // setShowMovieList(true)
       // setMovieList(data);
-      // addToTimeLine(IMG_PATH, data.title, data.release_date, id)
+      // 
       // getFetch(URL)
       // setActiveDisplay('creditsList')
 

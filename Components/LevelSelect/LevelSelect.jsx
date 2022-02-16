@@ -3,11 +3,11 @@ import { MovieListContext } from '../../context/MovieListContext';
 import LevelsCont from '../LevelsCont/LevelsCont';
 import MainCont from '../MainCont/MainCont';
 import RandomMoviesCont from '../RandomMoviesCont/RandomMoviesCont';
-import Topbar from '../Topbar/Topbar';
+// import Topbar from '../Topbar/Topbar';
 import './LevelSelect.scss'
 
 const LevelSelect = () => {
-  const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, setMovieID, endMovieID, setEndMovieID, personID } = useContext(MovieListContext)
+  const { setMovieID, setEndMovieID } = useContext(MovieListContext)
     const [ selected, setSelected ] = useState(false);
 
     const lvls = [

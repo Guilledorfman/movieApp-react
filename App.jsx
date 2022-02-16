@@ -23,7 +23,6 @@ function App({}) {
             <Route exact path="/timeline" element={<TimeLine/>}/> 
           </Routes>
         </BrowserRouter>
-        {/* <MovieEndCont/> */}
       </MovieListContextProvider>
 
     </div>

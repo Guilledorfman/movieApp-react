@@ -4,7 +4,7 @@ import './MovieEndCont.css'
 import { MovieListContext } from '../../context/MovieListContext';
 
 const MovieEndCont = ({movie_ID}) => {
-    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, setMovieID, goalMovie, setGoalMovie, endMovieID, setEndMovieID, personID, addToTimeLine } = useContext(MovieListContext)
+    const { setGoalMovie } = useContext(MovieListContext)
     
     // const [movie_ID, setMovie_ID] = useState(endMovieID)
     

@@ -6,7 +6,7 @@ import './TimeLineCont.css'
 
 const TimeLineCont = () => {
 
-    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, setMovieID,compareIds, personID, timeLine } = useContext(MovieListContext)
+    const { timeLine } = useContext(MovieListContext)
 
     const showTimeLine =  timeLine.map((e, index)=>{
         return(

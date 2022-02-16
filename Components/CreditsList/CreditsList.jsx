@@ -1,13 +1,13 @@
-import React, {useContext} from 'react';
+// import React, {useContext} from 'react';
 import Credit from '../Credit/Credit';
-import { MovieListContext } from '../../context/MovieListContext';
+// import { MovieListContext } from '../../context/MovieListContext';
 import './CreditsList.css'
 
 const CreditsList = ({data}) => {
 
 
 
-      const credits = data.map(e=>{
+      const credits = data.map((e, index)=>{
         let photo;
         let job;
  
@@ -20,7 +20,7 @@ const CreditsList = ({data}) => {
         }
 
         return(
-            <Credit key={e.id} name={e.name} id={e.id} photo={photo} job={job}/>
+            <Credit key={index} name={e.name} id={e.id} photo={photo} job={job}/>
         )
 
     })

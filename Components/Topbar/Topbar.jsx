@@ -3,17 +3,21 @@ import './Topbar.scss'
 import InfoIcon from '@mui/icons-material/Info';
 import { Link } from 'react-router-dom';
 
-// import { MovieListContext } from '../../context/MovieListContext';
+import { MovieListContext } from '../../context/MovieListContext';
 
-const Topbar = ({selected}) => {
-  // const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, setMovieID, endMovieID, setEndMovieID, personID } = useContext(MovieListContext)
+const Topbar = () => {
+  const { setEndGame, setTimeLine, setShowMovieList } = useContext(MovieListContext)
   
-
+function resetGame(){
+  setEndGame(false)
+  setShowMovieList(false)
+  setTimeLine([])
+}
 
   return (
     <div className="topbar"> 
       <div className="buttons">
-        <button className='left'><Link to={'/'}>BACK</Link></button>
+        <button onClick={()=>resetGame()} className='left'><Link to={'/'}>BACK</Link></button>
         <button className='right'><InfoIcon/>HOW TO PLAY</button>
       </div>
         <div className="title-cont">

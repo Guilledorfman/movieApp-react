@@ -1,18 +1,20 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { MovieListContext } from '../../context/MovieListContext';
+import MovieListCont from '../MovieListCont/MovieListCont';
 
 
 import MovieStart from '../MovieStart/MovieStart';
 import './MovieStartCont.css'
 
 
-const MovieStartCont = ({movie_ID}) => {
+const MovieStartCont = ({}) => {
 
 
-    const { showMovieList, getFetch, movieList } = useContext(MovieListContext)
+    const { getFetch, movieList, showMovieList, personID, movieID } = useContext(MovieListContext)
 
-    const [movieID, setMovieID] = useState(movie_ID)
+    // const [stateMovieID, setStateMovieID] = useState(movieID)
     const [movie, setMovie] = useState({});
+
 
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     const API = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${API_KEY}&include_adult=false`
@@ -23,6 +25,7 @@ const MovieStartCont = ({movie_ID}) => {
 
     },[movieID])
 
+
     useEffect(()=>{
       setMovie(movieList)
     },[movieList])
@@ -30,7 +33,9 @@ const MovieStartCont = ({movie_ID}) => {
   return (
       
         <div>
-            <MovieStart data={movie} id={movie.id}/>
+          { showMovieList ? <MovieListCont id={personID}/> : <MovieStart data={movie} id={movie.id}/> }
+            
+            
         </div>
   )
 };

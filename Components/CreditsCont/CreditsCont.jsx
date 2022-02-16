@@ -1,12 +1,12 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
 import './CreditsCont.css'
-import Credit from '../Credit/Credit';
-import { MovieListContext } from '../../context/MovieListContext';
+// import Credit from '../Credit/Credit';
+// import { MovieListContext } from '../../context/MovieListContext';
 import CreditsList from '../CreditsList/CreditsList';
 
 const CreditsCont = ({movie_ID}) => {
 
-    const { showMovieList, movieList, formatedCredits, getFetchCredits, creditsList, getFetch, activeDisplay, setActiveDisplay } = useContext(MovieListContext)
+    // const { showMovieList, movieList, formatedCredits, getFetchCredits, creditsList, getFetch, activeDisplay, setActiveDisplay } = useContext(MovieListContext)
 
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     const API = `https://api.themoviedb.org/3/movie/${movie_ID}/credits?api_key=${API_KEY}`;

@@ -16,7 +16,7 @@ const MovieListCont = ({id}) => {
         // .finally(setMovieList(data))
         // .finally(setLoading(false))
         showList(data);
-        
+
     }, [people_id] )
 
 

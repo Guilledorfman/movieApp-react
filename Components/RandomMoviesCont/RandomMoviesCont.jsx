@@ -4,9 +4,9 @@ import './RandomMoviesCont.scss'
 import { MovieListContext } from '../../context/MovieListContext';
 import { Link } from 'react-router-dom';
 
-const RandomMoviesCont = ({movieA, movieB, setSelected}) => {
+const RandomMoviesCont = ({ movieA, movieB }) => {
 
-    const { showMovieList, getFetch, movieList, setMovieID, setEndMovieID, setActiveDisplay } = useContext(MovieListContext)
+    const { setShowMovieList } = useContext(MovieListContext)
 
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
 
@@ -35,8 +35,8 @@ const RandomMoviesCont = ({movieA, movieB, setSelected}) => {
     //         setLoadingB(false)
     // },[bMovie])
 
-    let IMG_PATH1 = `https://image.tmdb.org/t/p/w500${aMovie.poster_path}`;
-    let IMG_PATH2 = `https://image.tmdb.org/t/p/w500${bMovie.poster_path}`;
+    // let IMG_PATH1 = `https://image.tmdb.org/t/p/w500${aMovie.poster_path}`;
+    // let IMG_PATH2 = `https://image.tmdb.org/t/p/w500${bMovie.poster_path}`;
 
     const randomLimit = 1000;
 
@@ -79,9 +79,6 @@ function getRandom(){
     numeroRandom1 === numeroRandom2 ? numeroRandom2 = Math.floor(Math.random()*randomLimit) : (setIdMovieA(numeroRandom1), setIdMovieB(numeroRandom2))
     
 }
-function prueba(){
-    console.log('probando');
-}
 function getRandomA(){
     setLoadingA(true)
     let numeroRandom1 = Math.floor(Math.random()*randomLimit);
@@ -93,12 +90,14 @@ function getRandomB(){
     let numeroRandom2 = Math.floor(Math.random()*randomLimit);
     numeroRandom2 === idMovieA ? numeroRandom2 = Math.floor(Math.random()*randomLimit) : (setIdMovieB(numeroRandom2))
     }
-
-    function pickMovies(a, b){
-        setMovieID(a);
-        setEndMovieID(b);
-        setSelected(true)
-    }
+function startGame(){
+    setShowMovieList(false);
+}
+    // function pickMovies(a, b){
+    //     setMovieID(a);
+    //     setEndMovieID(b);
+    //     setSelected(true)
+    // }
 
   return <>
         <div className="randommovie-cont">
@@ -110,7 +109,7 @@ function getRandomB(){
             </div>
 
                 { showMovieA && showMovieB ? <button className="play" 
-                // onClick={()=>pickMovies(idMovieA, idMovieB)}
+                onClick={()=>startGame()}
                 > <Link to={`/play/${idMovieA}/${idMovieB}`}>PLAY</Link> </button> : <></> }
         </div>
   </>

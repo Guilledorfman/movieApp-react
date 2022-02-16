@@ -1,22 +1,28 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useEffect, useContext} from 'react';
 import { MovieListContext } from '../../context/MovieListContext';
-import CreditsCont from '../CreditsCont/CreditsCont';
-import LevelSelect from '../LevelSelect/LevelSelect';
+// import CreditsCont from '../CreditsCont/CreditsCont';
+// import LevelSelect from '../LevelSelect/LevelSelect';
 import MovieEndCont from '../MovieEndCont/MovieEndCont';
-import MovieListCont from '../MovieListCont/MovieListCont';
+// import MovieListCont from '../MovieListCont/MovieListCont';
 import MovieStartCont from '../MovieStartCont/MovieStartCont';
 import TimeLineCont from '../TimeLineCont/TimeLineCont';
 
 import { useParams } from 'react-router-dom'
 
 const MainCont = () => {
+  
+  const { endGame, setMovieID } = useContext(MovieListContext)
 
     const { from, to } = useParams();
+
+    useEffect(()=>{
+      setMovieID(from)
+    },[from])
+
 
     console.log(from, to);
 
 
-    const { showMovieList, getFetch, movieList, activeDisplay, setActiveDisplay, movieID, setMovieID,compareIds, personID } = useContext(MovieListContext)
 
 
     // function changeActive(e){
@@ -47,8 +53,12 @@ const MainCont = () => {
   return (
 
       <>
-        <MovieEndCont movie_ID={to}/>
-        <MovieStartCont movie_ID={from}/>
+      { endGame ? <TimeLineCont/> : 
+        <>
+          <MovieEndCont movie_ID={to}/>
+          <MovieStartCont movie_ID={from}/>
+        </>
+      }
 
       {/* { activeDisplay === 'win' ? <></> : <MovieEndCont/> }
         
