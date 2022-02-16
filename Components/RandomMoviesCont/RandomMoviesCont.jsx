@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import RandomMovie from '../RandomMovie/RandomMovie';
 import './RandomMoviesCont.scss'
 import { MovieListContext } from '../../context/MovieListContext';
+import { Link } from 'react-router-dom';
 
 const RandomMoviesCont = ({movieA, movieB, setSelected}) => {
 
@@ -107,7 +108,10 @@ function getRandomB(){
                     <button onClick={getRandom}>GET TWO RANDOM MOVIES</button>
                 <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB} msg={'to'}/>
             </div>
-                { showMovieA && showMovieB ? <button className="play" onClick={()=>pickMovies(idMovieA, idMovieB)}> PLAY </button> : <></> }
+
+                { showMovieA && showMovieB ? <button className="play" 
+                // onClick={()=>pickMovies(idMovieA, idMovieB)}
+                > <Link to={`/play/${idMovieA}/${idMovieB}`}>PLAY</Link> </button> : <></> }
         </div>
   </>
   

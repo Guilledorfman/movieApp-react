@@ -14,22 +14,38 @@ const MovieStart = ({data, id}) => {
     const [movieCredits, setMovieCredits] = useState({});
     const [movieCreditsBoolean, setMovieCreditsBoolean] = useState(false);
 
+    const [ showCredits, setShowCredits ] = useState(false)
+
 
 
     const getCredits = async function(){
-      addToTimeLine(IMG_PATH, data.title, data.release_date, id)
+
+      
+      let data = await fetch(API).then(res=> res.json());
+      setShowCredits(true)
+      // setMovieList(data);
+      // addToTimeLine(IMG_PATH, data.title, data.release_date, id)
       // getFetch(URL)
-      setActiveDisplay('creditsList')
+      // setActiveDisplay('creditsList')
 
 }
 
   return (
     <div className="movie-start">
+      { showCredits ? <><CreditsCont movie_ID={id}/></> 
+      
+      :
+      <>
+      
           <img onClick={()=>getCredits()} className="movie-start-img" src={IMG_PATH} alt={data.title}/>
           <div className="movie-start-info">
             <h2>{data.title}</h2>
             <h3>{data.release_date}</h3>
           </div>
+      
+      </>
+      
+      }
     </div>
 
   )
