@@ -10,19 +10,39 @@
         button{
             position: absolute;
             background-color: rgba(245, 245, 220, 0);
-            color: white;
             font-family: $mainFont;
-            font-weight: 100;
-            height: 50px;
+            color: white;
+            font-weight: 300;
+            height: 60px;
             width: 200px;
             font-size: 1.3rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
+
+            .icon{
+                margin: auto;
+                
+            }
+            
+            b{
+                margin: auto;
+            }
         }
         .left{
             top: 30px;
             left: 50px;
+
+            a{  
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+            }
         }
         .right{
             top: 30px;

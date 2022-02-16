@@ -22,9 +22,16 @@
         color: white;
         font-family: $mainFont;
         font-size: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+        a{  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+        }
     }
     .randommovies-img{
         display: flex;

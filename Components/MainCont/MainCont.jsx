@@ -17,9 +17,6 @@ const MainCont = () => {
     },[from])
 
 
-    console.log(from, to);
-
-
   return (
 
       <>
