@@ -1,0 +1,55 @@
+@import '../../global.scss';
+
+.topbar{
+    margin-bottom: 30px;
+    height: 150px;
+    // background-color: red;
+    position: relative;
+
+    .buttons{
+        width: 100%;
+        button{
+            position: absolute;
+            background-color: rgba(245, 245, 220, 0);
+            color: white;
+            font-family: $mainFont;
+            font-weight: 100;
+            height: 50px;
+            width: 200px;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left{
+            top: 30px;
+            left: 50px;
+        }
+        .right{
+            top: 30px;
+            right: 50px;
+        }
+    }
+    .title-cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            margin: 0;
+            margin-top: 60px;
+            
+            b{
+                transform: rotateZ(35deg);
+                font-size: 3rem;
+                color: $secondaryColor;
+            }
+        }
+        h3{
+            margin: 0;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+    }
+}

@@ -12,7 +12,7 @@ const override = css`
 display: block;
 margin: auto;
 `;
-const RandomMovie = ({movie, loading, show, clickFn}) => {
+const RandomMovie = ({movie, loading, show, clickFn, msg}) => {
 
 
     let IMG_PATH = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -40,6 +40,7 @@ const RandomMovie = ({movie, loading, show, clickFn}) => {
       {movie.title === undefined || loading === true ? <></> : 
       <>
         <div className="randomMovie-info">
+            <b>{msg}:</b>
             <h3>{movie.title}</h3>
             <h5>{movie.release_date.slice(0,4)}</h5>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Level from '../Level/Level';
-import './LevelsCont.css'
+import './LevelsCont.scss'
 
 const LevelsCont = ({lvls, setSelected}) => {
 
@@ -15,12 +15,18 @@ const LevelsCont = ({lvls, setSelected}) => {
      ) 
     })
 
-  return <div className='lvl-cont'>
-      
+  return (
+    <div className="lvl-container">
+      <h2 className="challenges-title">Or pick one of these challenges:</h2>
+      <div className='lvl-cont'>
+          {lvlsList}
+      </div>
+    </div>
 
-    {lvlsList}
-      
-      </div>;
+
+  )
+  
+  
 };
 
 export default LevelsCont;

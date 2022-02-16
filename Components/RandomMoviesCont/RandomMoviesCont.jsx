@@ -101,10 +101,11 @@ function getRandomB(){
 
   return <>
         <div className="randommovie-cont">
+            <h2>You can pick two movies at random:</h2>
             <div className="randommovies-img">
-                <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} clickFn={getRandomA}/>
+                <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} msg={'from'} clickFn={getRandomA}/>
                     <button onClick={getRandom}>GET TWO RANDOM MOVIES</button>
-                <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB}/>
+                <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB} msg={'to'}/>
             </div>
                 { showMovieA && showMovieB ? <button className="play" onClick={()=>pickMovies(idMovieA, idMovieB)}> PLAY </button> : <></> }
         </div>

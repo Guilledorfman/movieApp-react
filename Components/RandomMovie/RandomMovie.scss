@@ -24,7 +24,7 @@
 
     .randomMovie-info{
         position: absolute;
-        overflow: hidden;
+        // overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -34,7 +34,12 @@
         background-color: rgba(0, 0, 0, 0.3);
         width: 100%;
         height: 100%;
-        
+        b{
+            position: absolute;
+            top: -40px;
+            font-size: 1.5rem;
+            color: $secondaryColor;
+        }
         h3{
             background-color: black;
             font-size: 1.5rem;

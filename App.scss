@@ -1,11 +1,15 @@
 @import './global.scss';
 
+
 .App{
+  overflow-x: hidden;
+  font-family: $mainFont;
   width: 100vw;
   color: white;
   background-color: rgba(12, 5, 37, .9); 
   background-blend-mode: darken;
   background-image: url(./PngItem_2229031.png);
   background-size: 500px;
+  scrollbar-width: none;
 
 }
