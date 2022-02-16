@@ -3,10 +3,7 @@ import Level from '../Level/Level';
 import './LevelsCont.scss'
 
 const LevelsCont = ({lvls, setSelected}) => {
-
-    // const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
-    
-    
+ 
     const lvlsList = lvls.map((e, index)=>{
         
 

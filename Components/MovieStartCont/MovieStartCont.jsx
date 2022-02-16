@@ -12,7 +12,6 @@ const MovieStartCont = ({}) => {
 
     const { getFetch, movieList, showMovieList, personID, movieID } = useContext(MovieListContext)
 
-    // const [stateMovieID, setStateMovieID] = useState(movieID)
     const [movie, setMovie] = useState({});
 
 

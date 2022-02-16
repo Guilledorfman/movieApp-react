@@ -6,8 +6,6 @@ import { MovieListContext } from '../../context/MovieListContext';
 const MovieEndCont = ({movie_ID}) => {
     const { setGoalMovie } = useContext(MovieListContext)
     
-    // const [movie_ID, setMovie_ID] = useState(endMovieID)
-    
     const [movie, setMovie] = useState({});
 
 
@@ -22,7 +20,6 @@ const MovieEndCont = ({movie_ID}) => {
             setMovie(data);
             const IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`
 
-            // addToTimeLine(IMG_PATH, data.title, data.release_date, data.id)
             setGoalMovie(
                 {
                     img: IMG_PATH,

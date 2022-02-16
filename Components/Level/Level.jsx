@@ -1,14 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { MovieListContext } from '../../context/MovieListContext';
 import './Level.css'
 
 const Level = ({movieA, movieB}) => {
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     const APIA = `https://api.themoviedb.org/3/movie/${movieA}?api_key=${API_KEY}&include_adult=false`
     const APIB = `https://api.themoviedb.org/3/movie/${movieB}?api_key=${API_KEY}&include_adult=false`
-
-    // const { setMovieID, setEndMovieID } = useContext(MovieListContext)
 
     const [aMovie, setAMovie] = useState({})
     const [bMovie, setBMovie] = useState({})
@@ -34,12 +31,6 @@ const Level = ({movieA, movieB}) => {
 
     },[APIB])
 
-
-    // function pickMovies(a, b){
-    //     setMovieID(a);
-    //     setEndMovieID(b);
-    //     setSelected(true)
-    // }
 
   return <>
             <Link className='level' to={`/play/${movieA}/${movieB}`}>

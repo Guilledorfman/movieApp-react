@@ -9,7 +9,6 @@ const PersonMovie = ({name, img, movie_id}) => {
   function pickMovie(id){
     
     setMovieID(id)
-    // setActiveDisplay('movie')
     setShowMovieList(false);
     compareIDs(id);
 

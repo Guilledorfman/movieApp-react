@@ -3,7 +3,6 @@
 .randomLoading{
     width: 100%;
     height: 100%;
-    // background-color: black;
     background-color: $mainColor;
     position: absolute;
     display: flex;
@@ -24,7 +23,6 @@
 
     .randomMovie-info{
         position: absolute;
-        // overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

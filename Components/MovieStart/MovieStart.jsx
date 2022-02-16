@@ -12,27 +12,20 @@ const MovieStart = ({data, id}) => {
   const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
   const API = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
 
-    // const [movieCredits, setMovieCredits] = useState({});
-    // const [movieCreditsBoolean, setMovieCreditsBoolean] = useState(false);
 
-    const [ showCredits, setShowCredits ] = useState(false)
+  const [ showCredits, setShowCredits ] = useState(false)
 
 
 
-    const getCredits = async function(){
+  const getCredits = async function(){
 
 
-      addToTimeLine(IMG_PATH, data.title, data.release_date, id)
+    addToTimeLine(IMG_PATH, data.title, data.release_date, id)
       
-      await fetch(API).then(res=> res.json());
-      setShowCredits(true)
-      // setShowMovieList(true)
-      // setMovieList(data);
-      // 
-      // getFetch(URL)
-      // setActiveDisplay('creditsList')
+    await fetch(API).then(res=> res.json());
+    setShowCredits(true)
 
-}
+  }
 
   return (
     <div className="movie-start">

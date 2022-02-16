@@ -26,18 +26,6 @@ const RandomMoviesCont = ({ movieA, movieB }) => {
     const [aMovie, setAMovie] = useState({})
     const [bMovie, setBMovie] = useState({})
 
-    //     useEffect(()=>{
-    //         aMovie.title === undefined ? <></> : 
-    //         setLoadingA(false)
-    // },[aMovie])
-    //     useEffect(()=>{
-    //         bMovie.title === undefined ? <></> : 
-    //         setLoadingB(false)
-    // },[bMovie])
-
-    // let IMG_PATH1 = `https://image.tmdb.org/t/p/w500${aMovie.poster_path}`;
-    // let IMG_PATH2 = `https://image.tmdb.org/t/p/w500${bMovie.poster_path}`;
-
     const randomLimit = 1000;
 
     useEffect(()=>{
@@ -93,11 +81,6 @@ function getRandomB(){
 function startGame(){
     setShowMovieList(false);
 }
-    // function pickMovies(a, b){
-    //     setMovieID(a);
-    //     setEndMovieID(b);
-    //     setSelected(true)
-    // }
 
   return <>
         <div className="randommovie-cont">

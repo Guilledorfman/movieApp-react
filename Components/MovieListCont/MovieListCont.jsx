@@ -13,8 +13,6 @@ const MovieListCont = ({id}) => {
     useEffect( async ()=>{
         const response = await fetch (`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_people=${id}&sort_by=popularity.desc`)
         const data = await response.json()
-        // .finally(setMovieList(data))
-        // .finally(setLoading(false))
         showList(data);
 
     }, [people_id] )

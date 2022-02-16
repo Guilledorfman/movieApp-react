@@ -3,7 +3,6 @@ import { MovieListContext } from '../../context/MovieListContext';
 import LevelsCont from '../LevelsCont/LevelsCont';
 import MainCont from '../MainCont/MainCont';
 import RandomMoviesCont from '../RandomMoviesCont/RandomMoviesCont';
-// import Topbar from '../Topbar/Topbar';
 import './LevelSelect.scss'
 
 const LevelSelect = () => {
@@ -49,13 +48,11 @@ const LevelSelect = () => {
 
   return (
     <>
-    {/* <Topbar selected={selected}/> */}
         { 
             selected ?
             <MainCont/>
             :
             <>
-              {/* <h2 className="challenges-title">Pick two movies at random:</h2> */}
               <div className="random-cont">
                 <RandomMoviesCont setSelected={setSelected}/>
               </div>

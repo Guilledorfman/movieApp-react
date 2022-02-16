@@ -14,20 +14,6 @@ const Credit = ({name, id, photo, job}) => {
     setResults(movieList)
   },[movieList])
 
-  const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
-
-  // const API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_people=${id}&sort_by=popularity.desc`
-
-  // const pickCredit = async () =>{
-    // setPersonID(id)
-    // getFetch(API)
-    // setResults(data)
-    // getFetch(API)
-    // setShowMovieList(true)
-    // addToTimeLine(photo, name, job, id)
-    // setPersonID(people_id)
-    // setActiveDisplay('movieList')
-// }
 
 function pickCredit(){
   addToTimeLine(photo, name, job, id)
