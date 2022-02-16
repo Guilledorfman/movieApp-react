@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Level.css'
+import './Level.scss'
+
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import StarIcon from '@mui/icons-material/Star';
 
 const Level = ({movieA, movieB}) => {
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
@@ -34,21 +37,57 @@ const Level = ({movieA, movieB}) => {
 
   return <>
             <Link className='level' to={`/play/${movieA}/${movieB}`}>
+
+ 
+
                 <div className="level1">
+
+                    <div className="circle1"></div>
+                    <div className="circle2"></div>
+                    <div className="circle3"></div>
+                    <div className="circle4"></div>
+
                     <div className="lvl-info info1">
-                        <h3>{aMovie.title}</h3>
-                        <h4>{aMovie.release_date}</h4>
+                        { aMovie.title === undefined ? <></> :
+                        <>  
+                            <b>FROM</b>
+                            <span className="spantitle">
+                                <StarIcon className="star"/>
+                                <h3>{aMovie.title}</h3>
+                            </span>
+                                <h4>-{aMovie.release_date.slice(0,4)}-</h4>
+                            
+                        </>
+                        }
                     </div>
-                    <img src={IMG_PATH1}  alt="" />
+                    <span className="spanimg">
+                        <img src={IMG_PATH1}  alt="" />
+                        <StarIcon className="star"/>
+                    </span>
                 </div>
                 <b>
-                    <i className="fas fa-arrow-right"></i>
+                    <ArrowForwardIosIcon className="icon"/>
                 </b>
                 <div className="level2">
-                    <img src={IMG_PATH2}  alt="" />
+                    <div className="circle1"></div>
+                    <div className="circle2"></div>
+                    <div className="circle3"></div>
+                    <div className="circle4"></div>
+                    <span className="spanimg">
+                        <StarIcon className="star"/>
+                        <img src={IMG_PATH2}  alt="" />
+                    </span>
                     <div className="lvl-info info2">
-                        <h3>{bMovie.title}</h3>
-                        <h4>{bMovie.release_date}</h4>
+                    { bMovie.title === undefined ? <></> :
+                        <>  
+                            <b>TO</b>
+                            <span className="spantitle">
+                                <h3>{bMovie.title}</h3>
+                                <StarIcon className="star"/>
+                            </span>
+                            <h4>-{bMovie.release_date.slice(0,4)}-</h4>
+                        </>
+                        }
                     </div>
                     
                 </div>

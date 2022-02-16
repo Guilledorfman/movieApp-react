@@ -4,7 +4,6 @@
     margin-bottom: 30px;
     height: 150px;
     position: relative;
-
     .buttons{
         width: 100%;
         button{
@@ -20,15 +19,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-
-            .icon{
-                margin: auto;
-                
-            }
             
-            b{
-                margin: auto;
-            }
         }
         .left{
             top: 30px;
@@ -42,11 +33,25 @@
                 align-items: center;
                 text-decoration: none;
                 color: white;
+
+                .icon{
+                    font-size: 2rem;
+                }
+
+                b{
+                    margin-left: 5px;
+                }
             }
         }
         .right{
             top: 30px;
             right: 50px;
+
+            .icon{
+                margin: auto;
+                margin-right: 5px;
+                font-size: 2rem;
+            }
         }
     }
     .title-cont{
@@ -71,4 +76,35 @@
         }
 
     }
+}
+
+@media(max-width:750px) {
+    .topbar{
+        .buttons{
+            .right{
+                    width: 50px;
+                    height: 50px;
+                    top: 10px;
+                    .icon{
+                        margin: auto;
+                        font-size: 2rem;
+                    }
+                b{
+                    display: none;
+                }
+            }
+            .left{
+                width: 50px;
+                height: 50px;
+                top: 10px;
+
+                a{
+                    b{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
 }

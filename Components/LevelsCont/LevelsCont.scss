@@ -1,7 +1,22 @@
-.lvl-cont{
-    width: 80%;
-    margin: auto;
-    min-width: 300px;
-    overflow: auto;
-    padding: 10px;
+@import '../../global.scss';
+
+.lvl-container{
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $mainColor2;
+    align-items: center;
+    h2{
+        margin-top: 60px;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    .lvl-cont{
+        width: 100%;
+        margin: auto;
+        min-width: 300px;
+    }
+    
 }

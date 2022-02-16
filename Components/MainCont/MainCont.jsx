@@ -4,6 +4,8 @@ import MovieEndCont from '../MovieEndCont/MovieEndCont';
 import MovieStartCont from '../MovieStartCont/MovieStartCont';
 import TimeLineCont from '../TimeLineCont/TimeLineCont';
 
+import './MainCont.scss'
+
 import { useParams } from 'react-router-dom'
 
 const MainCont = () => {
@@ -19,14 +21,14 @@ const MainCont = () => {
 
   return (
 
-      <>
+      <div className="maincont">
       { endGame ? <TimeLineCont/> : 
         <>
           <MovieEndCont movie_ID={to}/>
           <MovieStartCont movie_ID={from}/>
         </>
       }
-    </>
+    </div>
   );
 };
 

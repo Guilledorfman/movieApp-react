@@ -1,7 +1,7 @@
 @import './global.scss';
 
-
 .App{
+  min-width: 340px;
   overflow-x: hidden;
   font-family: $mainFont;
   width: 100vw;

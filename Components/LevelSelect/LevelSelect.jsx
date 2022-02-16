@@ -1,12 +1,10 @@
-import React, {useState, useContext} from 'react';
-import { MovieListContext } from '../../context/MovieListContext';
+import React, { useState } from 'react';
 import LevelsCont from '../LevelsCont/LevelsCont';
 import MainCont from '../MainCont/MainCont';
 import RandomMoviesCont from '../RandomMoviesCont/RandomMoviesCont';
 import './LevelSelect.scss'
 
 const LevelSelect = () => {
-  const { setMovieID, setEndMovieID } = useContext(MovieListContext)
     const [ selected, setSelected ] = useState(false);
 
     const lvls = [
@@ -27,40 +25,21 @@ const LevelSelect = () => {
         b : 152
       },
       {
-        a : 101,
-        b : 142
-      },
-      {
-        a : 666,
-        b : 320
-      },
-      {
         a : 841,
         b : 438631
       }
     ]
 
-    function pickMovies(a, b){
-        setMovieID(a);
-        setEndMovieID(b);
-        setSelected(true)
-    }
-
   return (
     <>
         { 
             selected ?
-            <MainCont/>
+              <MainCont/>
             :
             <>
-              <div className="random-cont">
-                <RandomMoviesCont setSelected={setSelected}/>
-              </div>
-            <div className="levels-cont">
-              <div className="levels">
-              </div>
-            </div>
-            <LevelsCont lvls={lvls} setSelected={setSelected}/>
+              <RandomMoviesCont setSelected={setSelected}/>
+
+              <LevelsCont lvls={lvls} setSelected={setSelected}/>
             </>
         }
     </>

@@ -39,7 +39,7 @@ const RandomMovie = ({movie, loading, show, clickFn, msg}) => {
     </> : <></>}
       {movie.title === undefined || loading === true ? <></> : 
       <>
-        <div className="randomMovie-info">
+        <div className={msg}>
             <b>{msg}:</b>
             <h3>{movie.title}</h3>
             <h5>{movie.release_date.slice(0,4)}</h5>

@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import './Topbar.scss'
 import InfoIcon from '@mui/icons-material/Info';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'
 import { MovieListContext } from '../../context/MovieListContext';
@@ -20,7 +21,7 @@ function resetGame(){
     <div className="topbar"> 
       <div className="buttons">
         { location.pathname === '/' ? <></> :
-          <button onClick={()=>resetGame()} className='left'><Link to={'/'}>BACK</Link></button>
+          <button onClick={()=>resetGame()} className='left'><Link to={'/'}><ArrowBackIcon className="icon" /><b>BACK</b></Link></button>
         }
         <button className='right'><InfoIcon className="icon" /><b>HOW TO PLAY</b></button>
       </div>

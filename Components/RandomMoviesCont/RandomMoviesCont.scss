@@ -8,7 +8,7 @@
     background-color: rgba(0, 0, 0, 0.521);
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 
     h2{
         margin-bottom: 60px;
@@ -34,6 +34,7 @@
         }
     }
     .randommovies-img{
+        overflow-x: visible;
         display: flex;
         justify-content: space-between;
         align-items: center;
