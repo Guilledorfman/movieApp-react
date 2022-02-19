@@ -7,6 +7,7 @@ import LevelSelect from "./Components/LevelSelect/LevelSelect"
 import Topbar from "./Components/Topbar/Topbar"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TimeLine from "./Components/TimeLine/TimeLine"
+import Footer from "./Components/Footer/Footer"
 
 
 
@@ -22,6 +23,7 @@ function App({}) {
             <Route exact path="/play/:from/:to" element={<MainCont/>}/>
             <Route exact path="/timeline" element={<TimeLine/>}/> 
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </MovieListContextProvider>
 

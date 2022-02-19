@@ -15,7 +15,7 @@ const MovieStart = ({data, id}) => {
 
   const [ showCredits, setShowCredits ] = useState(false)
 
-
+console.log(data.original_language);
 
   const getCredits = async function(){
 
@@ -37,6 +37,7 @@ const MovieStart = ({data, id}) => {
           <img onClick={()=>getCredits()} className="movie-start-img" src={IMG_PATH} alt={data.title}/>
           <div className="movie-start-info">
             <h2>{data.title}</h2>
+            {data.original_language === 'en' ?  <></> : <h4>({data.original_title})</h4>}
             <h3>{data.release_date}</h3>
           </div>
       

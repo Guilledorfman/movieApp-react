@@ -16,6 +16,7 @@ const MainCont = () => {
 
     useEffect(()=>{
       setMovieID(from)
+
     },[from])
 
 

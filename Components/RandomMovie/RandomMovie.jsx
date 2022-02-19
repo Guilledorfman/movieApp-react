@@ -14,7 +14,6 @@ margin: auto;
 `;
 const RandomMovie = ({movie, loading, show, clickFn, msg}) => {
 
-
     let IMG_PATH = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
 
@@ -42,6 +41,7 @@ const RandomMovie = ({movie, loading, show, clickFn, msg}) => {
         <div className={msg}>
             <b>{msg}:</b>
             <h3>{movie.title}</h3>
+            {movie.original_language === 'en' ?  <></> : <i>({movie.original_title})</i>}
             <h5>{movie.release_date.slice(0,4)}</h5>
         </div>
         <img className="randomImg" src={IMG_PATH} alt="" />

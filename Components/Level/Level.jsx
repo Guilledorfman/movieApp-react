@@ -16,11 +16,15 @@ const Level = ({movieA, movieB}) => {
     let IMG_PATH1 = `https://image.tmdb.org/t/p/w500${aMovie.poster_path}`;
     let IMG_PATH2 = `https://image.tmdb.org/t/p/w500${bMovie.poster_path}`;
 
+    let BACKDROP_PATH1 = `https://image.tmdb.org/t/p/w500${aMovie.backdrop_path}`;
+    let BACKDROP_PATH2 = `https://image.tmdb.org/t/p/w500${bMovie.backdrop_path}`;
+
     useEffect(()=>{
 
         ( async function(){
             let data = await fetch(APIA).then(res=> res.json());
             setAMovie(data);
+
         })();
 
     },[APIA])

@@ -2,7 +2,7 @@
 
 .lvl-container{
     overflow-x: hidden;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +16,6 @@
     .lvl-cont{
         width: 100%;
         margin: auto;
-        min-width: 300px;
     }
     
 }

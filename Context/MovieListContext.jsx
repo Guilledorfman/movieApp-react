@@ -5,7 +5,7 @@ export const MovieListContext = createContext([]);
 function MovieListContextProvider( { children } ) {
 
     const [movieList, setMovieList] = useState([])
-    const [ movieID, setMovieID ] = useState(2)
+    const [ movieID, setMovieID ] = useState(1)
     const [ endMovieID, setEndMovieID ] = useState(2)
     const [ formatedCredits, setFormatedCredits ] = useState([]);
     const [ timeLine, setTimeLine ] = useState([])
