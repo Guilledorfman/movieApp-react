@@ -3,8 +3,18 @@ import RandomMovie from '../RandomMovie/RandomMovie';
 import './RandomMoviesCont.scss'
 import { MovieListContext } from '../../context/MovieListContext';
 import { Link } from 'react-router-dom';
+import LanguageSelect from '../LanguageSelect/LanguageSelect';
 
 const RandomMoviesCont = ({ }) => {
+
+
+// ME FALTA ENCONTRAR LA FORMA DE GENERAR UNA PÁGINA AL AZAR A PARTIR DEL
+// MAXIMO DE PAGINAS QUE LLEGAN data.total_pages DESPUES UN NUMERO AL AZAR
+// ENTRE EL 1 Y EL 20, DE ESTA FORMA VOY A PODER CONTROLAR MEJOR LAS PELICULAS
+// AL AZAR QUE LLEGAN, PUEDO BUSCAR LAS MAS POPULARES POR EJEMPLO O BUSCAR POR 
+// LENGUAJE Y HACER UN SELECT QUE EN ONCHANGE CAMBIE EL LENGUAGE Y BUSQUE DE NUEVO!!
+
+// TAMBIEN ESTARIA BUENO BUSCAR LA FORMA DE QUE EL USUARIO CREE SUS PROPIOS CHALLENGES
 
     const { setShowMovieList, setMovieID, movieID } = useContext(MovieListContext)
 
@@ -19,10 +29,13 @@ const RandomMoviesCont = ({ }) => {
     const [idMovieA, setIdMovieA] = useState();
     const [idMovieB, setIdMovieB] = useState();
 
-    const [ language, setLanguage ] = useState('en')
-    const [ randomPage, setRandomPage ] = useState()
+    const [ language, setLanguage ] = useState('')
 
-    const APIDiscover = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_count.desc&with_original_language=${language}&page=${randomPage}`
+    const [ randomPage1, setRandomPage1 ] = useState(1)
+    const [ randomPage2, setRandomPage2 ] = useState(1)
+
+    const APIDiscover = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_count.desc&with_original_language=${language}`
+    // const APIDiscoverPages = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_count.desc&with_original_language=${language}&page=${randomPage}`
     const APIA = `https://api.themoviedb.org/3/movie/${idMovieA}?api_key=${API_KEY}&include_adult=false`
     const APIB = `https://api.themoviedb.org/3/movie/${idMovieB}?api_key=${API_KEY}&include_adult=false`
 
@@ -38,27 +51,27 @@ function validateMovie(data, randomFunction, functionMovie, loading){
     loading(false) 
 }
 
-    useEffect(()=>{
-        if (showMovieA === true){
-            ( async function(){
+    // useEffect(()=>{
+    //     if (showMovieA === true){
+    //         ( async function(){
                 
-                setLoadingA(true)
-                let data = await fetch(APIA).then(res=> res.json())
-                validateMovie(data, getRandomA ,setAMovie, setLoadingA)
-            })();
-        }
-    },[idMovieA])
+    //             setLoadingA(true)
+    //             let data = await fetch(APIA).then(res=> res.json())
+    //             validateMovie(data, getRandomA ,setAMovie, setLoadingA)
+    //         })();
+    //     }
+    // },[idMovieA])
 
-    useEffect(()=>{
-        if (showMovieB === true){
-            ( async function(){
+    // useEffect(()=>{
+    //     if (showMovieB === true){
+    //         ( async function(){
                 
-                setLoadingB(true)
-                let data = await fetch(APIB).then(res=> res.json());
-                validateMovie(data, getRandomB ,setBMovie, setLoadingB)
-            })();
-        }
-    },[idMovieB])
+    //             setLoadingB(true)
+    //             let data = await fetch(APIB).then(res=> res.json());
+    //             validateMovie(data, getRandomB ,setBMovie, setLoadingB)
+    //         })();
+    //     }
+    // },[idMovieB])
 
 
 function getRandom(){
@@ -88,35 +101,114 @@ function startGame(){
     console.log(movieID);
 }
 
-useEffect(()=>{
-    
+///// NUEVO METODO
+
+
+function getRandomMovie(randomPageNumber, setMovie, setShowMovie, setLoading, setIdMovie){
     ( async function(){
-        let data = await fetch(APIDiscover).then(res=> res.json());
-        console.log(data.results[1].title);
+        setLoading(true)
+        let data = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_count.desc&with_original_language=${language}&page=${randomPageNumber}`).then(res=> res.json());
+        let randomMovieNumber = Math.floor(Math.random() * data.results.length)
+        setMovie(data.results[randomMovieNumber]);
+        setShowMovie(true)
+        setLoading(false)
+        setIdMovie(data.results[randomMovieNumber].id)
     })();
-},[APIDiscover])
-
-
-function changeLanguage(){
-
 }
+
+// useEffect(()=>{
+
+//         ( async function(){
+//             let data = await fetch(APIDiscover).then(res=> res.json());
+//             let pagesLimit;
+//             data.total_pages >= 500 ? pagesLimit= 500 : pagesLimit = data.total_pages
+//             let randomPageNumber = Math.floor(Math.random()* pagesLimit + 1)
+//             setRandomPage(randomPageNumber)
+            
+            
+            
+            
+//         })();
+//     },[language])
+
+    function getMovieA(){
+        ( async function(){
+            let data = await fetch(APIDiscover).then(res=> res.json());
+            let pagesLimit;
+            data.total_pages >= 500 ? pagesLimit= 500 : pagesLimit = data.total_pages
+            let randomPageNumber = Math.floor(Math.random()* pagesLimit + 1)
+            getRandomMovie(randomPageNumber, setAMovie, setShowMovieA, setLoadingA, setIdMovieA)
+        })();
+    }
+    function getMovieB(){
+        ( async function(){
+            let data = await fetch(APIDiscover).then(res=> res.json());
+            let pagesLimit;
+            data.total_pages >= 500 ? pagesLimit= 500 : pagesLimit = data.total_pages
+            let randomPageNumber = Math.floor(Math.random()* pagesLimit + 1)
+            getRandomMovie(randomPageNumber, setBMovie, setShowMovieB, setLoadingB, setIdMovieB)
+
+            
+        })();
+    }
+
+    useEffect(()=>{
+        idMovieA === idMovieB && showMovieB ? getMovieB() : <></>
+    },[idMovieB])
+
+    useEffect(()=>{
+        idMovieA === idMovieB && showMovieA ? getMovieA() : <></>
+    },[idMovieA])
+
+    function getMovies(){
+        getMovieA()
+        getMovieB()
+
+    }
+function inverseMovies(){
+    let movieA = aMovie;
+    let movieB = bMovie;
+
+    let movieAId= idMovieA;
+    let movieBId = idMovieB;
+
+    setIdMovieA(movieBId)
+    setIdMovieB(movieAId)
+    setBMovie(movieA)
+    setAMovie(movieB)
+}
+
 
   return <>
         <div className="randommovie-cont">
             <h2>You can pick two movies at random:</h2>
-            <select onChange={changeLanguage} name="Languages" id="">
+            {/* <select onChange={changeLanguage} name="Languages" id="">
                 <option value="en">EN</option>
                 <option value="es">ES</option>
-            </select>
+            </select> */}
+            <LanguageSelect setLanguage={setLanguage}/>
             <div className="randommovies-img">
+                <button onClick={getMovieA}>1</button>
+                <button onClick={getMovieB}>2</button>
                 <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} msg={'from'} clickFn={getRandomA}/>
-                    <button onClick={getRandom}>GET TWO RANDOM MOVIES</button>
+                <button onClick={getMovies}>GET RANDOMMM</button>
+                    {/* <button onClick={getRandom}>GET TWO RANDOM MOVIES</button> */}
                 <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB} msg={'to'}/>
             </div>
 
-                { !loadingA && !loadingB ? <button className="play" 
+                { !loadingA && !loadingB ? 
+                
+                <>
+                <button onClick={inverseMovies}>inverse</button>
+                <button className="play" 
                 onClick={()=>startGame()}
-                > <Link to={`/play/${idMovieA}/${idMovieB}`}>PLAY</Link> </button> : <></> }
+                > <Link to={`/play/${idMovieA}/${idMovieB}`}>PLAY</Link> </button> 
+                
+                </>
+                
+                : <></> 
+                
+                }
         </div>
   </>
   
