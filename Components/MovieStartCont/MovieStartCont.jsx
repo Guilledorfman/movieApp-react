@@ -4,7 +4,7 @@ import MovieListCont from '../MovieListCont/MovieListCont';
 
 
 import MovieStart from '../MovieStart/MovieStart';
-import './MovieStartCont.css'
+import './MovieStartCont.scss'
 
 
 const MovieStartCont = ({movie_ID}) => {
@@ -31,7 +31,7 @@ const MovieStartCont = ({movie_ID}) => {
 
   return (
       
-        <div>
+        <div className="MovieStartCont">
           { showMovieList ? <MovieListCont id={personID}/> : <MovieStart data={movie} id={movie.id}/> }
             
             

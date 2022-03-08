@@ -14,8 +14,8 @@
 
 .randomMovie{
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 130px;
+    height: 195px;
     outline: 2px solid white;
     display: flex;
     flex-direction: column;
@@ -35,19 +35,19 @@
         b{
             position: absolute;
             top: -40px;
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: $secondaryColor;
         }
         h3{
             background-color: black;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 700;
             text-align: center;
         }
         
         h5{
             background-color: black;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 700;
         }
     }
@@ -62,6 +62,8 @@
 @media(min-width:980px ) {
 
     .randomMovie{
+        width: 200px;
+        height: 300px;
         .from, .to{
             background-color: rgba(0, 0, 0, 00);
             width: 100%;

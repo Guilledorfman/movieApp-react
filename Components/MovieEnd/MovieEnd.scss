@@ -1,0 +1,23 @@
+.movie{
+    border: 2px solid white;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 600px;
+    .movie-info{
+        text-align: center;
+
+        h2{
+            border-bottom: 2px solid rgb(255, 255, 255);
+        }
+        h3{
+            border-bottom: 2px solid rgb(255, 255, 255);
+        }
+    }
+    .movie-img{
+        width: 150px;
+    }
+}

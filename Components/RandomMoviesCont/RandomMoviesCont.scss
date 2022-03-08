@@ -14,12 +14,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     padding-top: 50px;
     padding-bottom: 50px;
     // margin-bottom: 50px;
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    margin-bottom: 60px;
     h2{
-        margin-bottom: 60px;
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: 300;
     }
+
+    
+
+}
     .play{
         width: 200px;
         height: 80px;
@@ -65,13 +73,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            // background-color: red;
             button{
                 font-weight: 700;
                 border-radius: 30px;
-                margin: 20px;
-                width: 100px;
-                height: 100px;
+                margin: 5px;
+                width: 50px;
+                font-size: .6rem;
+                height: 50px;
                 color: white;
                 background-color: $mainColor;
                 font-family: $mainFont;
@@ -90,18 +98,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         }
     }
 }
-
-@media(max-width:560px) {
+@media(min-width:660px ) {
 
     .randommovie-cont{
-
+        h2{
+            margin-bottom: 60px;
+            font-size: 2rem;
+            font-weight: 300;
+        }
         .randommovies-img{
-            flex-direction: column;
-    
-            button{
-                margin: 50px;
-            }
-    
+
+            .button_cont{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                // background-color: red;
+                button{
+                    font-weight: 700;
+                    border-radius: 30px;
+                    margin: 20px;
+                    width: 100px;
+                    height: 100px;
+                    color: white;
+                    background-color: $mainColor;
+                    font-family: $mainFont;
+                    border: 2px solid white;
+                    cursor: pointer;
+                }
+                .icon{
+                    font-size: 2rem;
+                    cursor: pointer;
+        
+                    &:hover{
+                        color: $secondaryColor;
+                    }
+                }
         }
     }
+
+    }
+
+
 }

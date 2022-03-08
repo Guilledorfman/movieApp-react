@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 import SwitchRightIcon from '@mui/icons-material/SwitchRight';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
 
 const RandomMoviesCont = ({ }) => {
 
@@ -182,19 +183,21 @@ function inverseMovies(){
 
   return <>
         <div className="randommovie-cont">
-            <h2>You can pick two movies at random:</h2>
+            <div className="title">
+                <h2>You can pick two movies at random:</h2>
+                <LanguageSelect setLanguage={setLanguage}/>
+            </div>
             {/* <select onChange={changeLanguage} name="Languages" id="">
                 <option value="en">EN</option>
                 <option value="es">ES</option>
             </select> */}
-            <LanguageSelect setLanguage={setLanguage}/>
             <div className="randommovies-img">
                 <div className="movie_cont">
                     <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} msg={'from'} clickFn={getRandomA}/>
                     <span className="changeIcon" onClick={getMovieA}><ChangeCircleIcon className="icon" /></span>
                 </div>
                 <div className="button_cont">
-                    <button onClick={getMovies}>GET RANDOMMM</button>
+                    <button onClick={getMovies}><ShuffleIcon className="icon"/></button>
                     { !loadingA && !loadingB ? 
                     <span onClick={inverseMovies}><SwitchRightIcon className="icon"/></span>
                         : <></>

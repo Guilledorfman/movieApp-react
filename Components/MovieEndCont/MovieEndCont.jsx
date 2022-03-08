@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react'
 import MovieEnd from '../MovieEnd/MovieEnd'
-import './MovieEndCont.css'
+import './MovieEndCont.scss'
 import { MovieListContext } from '../../context/MovieListContext';
 
 const MovieEndCont = ({movie_ID}) => {

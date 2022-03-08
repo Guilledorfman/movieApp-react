@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './MovieEnd.css'
+import './MovieEnd.scss'
 
 const MovieEnd = ({data, id}) => {
 
