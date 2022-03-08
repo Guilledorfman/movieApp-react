@@ -11,7 +11,7 @@ import PreviousStep from '../PreviousStep/PreviousStep';
 
 const MainCont = () => {
   
-  const { endGame, setMovieID } = useContext(MovieListContext)
+  const { endGame, setMovieID, timeLine } = useContext(MovieListContext)
 
     const { from, to } = useParams();
 
@@ -26,7 +26,7 @@ const MainCont = () => {
       <div className="maincont">
       { endGame ? <TimeLineCont/> : 
         <>
-          <PreviousStep/>
+          <PreviousStep lastStep={timeLine}/>
           <MovieStartCont movie_ID={from}/>
           <MovieEndCont movie_ID={to}/>
         </>
