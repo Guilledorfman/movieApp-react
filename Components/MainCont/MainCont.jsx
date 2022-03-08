@@ -7,6 +7,7 @@ import TimeLineCont from '../TimeLineCont/TimeLineCont';
 import './MainCont.scss'
 
 import { useParams } from 'react-router-dom'
+import PreviousStep from '../PreviousStep/PreviousStep';
 
 const MainCont = () => {
   
@@ -25,8 +26,9 @@ const MainCont = () => {
       <div className="maincont">
       { endGame ? <TimeLineCont/> : 
         <>
-          <MovieEndCont movie_ID={to}/>
+          <PreviousStep/>
           <MovieStartCont movie_ID={from}/>
+          <MovieEndCont movie_ID={to}/>
         </>
       }
     </div>

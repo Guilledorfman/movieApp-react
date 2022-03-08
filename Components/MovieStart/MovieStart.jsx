@@ -1,8 +1,9 @@
 import React, {useState, useEffect, useContext} from 'react';
 import CreditsCont from '../CreditsCont/CreditsCont';
 import { MovieListContext } from '../../context/MovieListContext';
+import SavedSearchIcon from '@mui/icons-material/SavedSearch';
 
-import './MovieStart.css'
+import './MovieStart.scss'
 
 const MovieStart = ({data, id}) => {
 
@@ -33,11 +34,13 @@ const MovieStart = ({data, id}) => {
       :
       <>
       
-          <img onClick={()=>getCredits()} className="movie-start-img" src={IMG_PATH} alt={data.title}/>
+          <img className="movie-start-img" src={IMG_PATH} alt={data.title}/>
+          <span classsName="seecredits" onClick={()=>getCredits()}><SavedSearchIcon className="icon"/></span>
           <div className="movie-start-info">
             <h2>{data.title}</h2>
             {data.original_language === 'en' ?  <></> : <h4>({data.original_title})</h4>}
-            <h3>{data.release_date}</h3>
+            {data.release_date === undefined ? <></> : <h3>{data.release_date.slice(0,4)}</h3> }
+
           </div>
       
       </>
