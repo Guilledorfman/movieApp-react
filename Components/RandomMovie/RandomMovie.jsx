@@ -14,8 +14,8 @@ margin: auto;
 `;
 const RandomMovie = ({movie, loading, show, clickFn, msg}) => {
 
-    let IMG_PATH = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-
+    let IMG_PATH
+    movie.poster_path === null ? IMG_PATH = "https://res.cloudinary.com/dxoqq4yvo/image/upload/v1646695857/movie2movie/movieposternotfound_ry1cc0.png" : IMG_PATH = `https://image.tmdb.org/t/p/w500${movie.poster_path}`
 
   return <div className="randomMovie">
     { loading ? <>

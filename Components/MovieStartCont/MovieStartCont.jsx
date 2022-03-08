@@ -9,7 +9,6 @@ import './MovieStartCont.css'
 
 const MovieStartCont = ({movie_ID}) => {
 
-
     const { getFetch, movieList,setMovieID, showMovieList, personID, movieID } = useContext(MovieListContext)
 
 

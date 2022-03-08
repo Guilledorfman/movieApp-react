@@ -15,7 +15,6 @@ const MovieStart = ({data, id}) => {
 
   const [ showCredits, setShowCredits ] = useState(false)
 
-console.log(data.original_language);
 
   const getCredits = async function(){
 

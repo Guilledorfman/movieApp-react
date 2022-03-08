@@ -4,6 +4,8 @@ import './RandomMoviesCont.scss'
 import { MovieListContext } from '../../context/MovieListContext';
 import { Link } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
+import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+import SwitchRightIcon from '@mui/icons-material/SwitchRight';
 
 const RandomMoviesCont = ({ }) => {
 
@@ -98,7 +100,6 @@ function getRandomB(){
 function startGame(){
     setShowMovieList(false);
     setMovieID(idMovieA)
-    console.log(movieID);
 }
 
 ///// NUEVO METODO
@@ -188,18 +189,26 @@ function inverseMovies(){
             </select> */}
             <LanguageSelect setLanguage={setLanguage}/>
             <div className="randommovies-img">
-                <button onClick={getMovieA}>1</button>
-                <button onClick={getMovieB}>2</button>
-                <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} msg={'from'} clickFn={getRandomA}/>
-                <button onClick={getMovies}>GET RANDOMMM</button>
-                    {/* <button onClick={getRandom}>GET TWO RANDOM MOVIES</button> */}
-                <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB} msg={'to'}/>
+                <div className="movie_cont">
+                    <RandomMovie movie={aMovie} loading={loadingA} show={showMovieA} msg={'from'} clickFn={getRandomA}/>
+                    <span className="changeIcon" onClick={getMovieA}><ChangeCircleIcon className="icon" /></span>
+                </div>
+                <div className="button_cont">
+                    <button onClick={getMovies}>GET RANDOMMM</button>
+                    { !loadingA && !loadingB ? 
+                    <span onClick={inverseMovies}><SwitchRightIcon className="icon"/></span>
+                        : <></>
+                }
+                </div>
+                <div className="movie_cont">
+                    <RandomMovie movie={bMovie} loading={loadingB} show={showMovieB} msg={'to'}/>
+                    <span className="changeIcon" onClick={getMovieB}><ChangeCircleIcon className="icon" /></span>
+                </div>
             </div>
 
                 { !loadingA && !loadingB ? 
                 
                 <>
-                <button onClick={inverseMovies}>inverse</button>
                 <button className="play" 
                 onClick={()=>startGame()}
                 > <Link to={`/play/${idMovieA}/${idMovieB}`}>PLAY</Link> </button> 
