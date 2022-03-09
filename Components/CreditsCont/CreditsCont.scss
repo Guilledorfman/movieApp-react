@@ -1,0 +1,9 @@
+@import '../../global.scss';
+
+.creditsCont{
+    height: 400px;
+    width: 600px;
+    overflow: auto;
+    background-color: $mainColor;
+    margin: 50px;
+}

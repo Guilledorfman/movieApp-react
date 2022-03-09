@@ -3,7 +3,6 @@ import './PreviousStep.scss'
 
 const PreviousStep = ({lastStep}) => {
 
-console.log(lastStep);
 
   return (
     <div className="previous-cont">
