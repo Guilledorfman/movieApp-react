@@ -41,8 +41,9 @@ function MovieListContextProvider( { children } ) {
     }
 
     function addToTimeLine(img, title, subtitle, id){
-
-        let newStep = new Step(img, title, subtitle, id);
+        let movieYear;
+        !isNaN(parseInt(subtitle)) ? movieYear = subtitle.slice(0,4) : movieYear = subtitle;
+        let newStep = new Step(img, title, movieYear, id);
         setTimeLine([...timeLine, newStep])
     }
 

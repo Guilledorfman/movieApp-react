@@ -8,6 +8,10 @@
         margin-top: 25px;
         width: 100px;
         text-align: center;
+        cursor: pointer;
+        &:hover img{
+            filter: opacity(.56);
+        }
         b{
             font-size: .8rem;
         }

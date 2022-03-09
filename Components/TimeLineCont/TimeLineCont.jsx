@@ -1,12 +1,23 @@
-import React,{useContext} from 'react';
+import React,{useContext, useState} from 'react';
 import { MovieListContext } from '../../context/MovieListContext';
 import TimeLine from '../TimeLine/TimeLine';
+import { Link } from 'react-router-dom';
 
-import './TimeLineCont.css'
+import './TimeLineCont.scss'
+
+import { useParams } from 'react-router-dom'
+
 
 const TimeLineCont = () => {
 
+  
+  const { from, to } = useParams();
+
+  const { setShowMovieList, setMovieID, movieID, setEndGame, setTimeLine } = useContext(MovieListContext)
+  
     const { timeLine } = useContext(MovieListContext)
+
+    const [ alertClass, setAlertClass ] = useState("")
 
     const showTimeLine =  timeLine.map((e, index)=>{
         return(
@@ -14,6 +25,8 @@ const TimeLineCont = () => {
         )
     })
 function copy(){
+  showAlert()
+
   let textDOM = document.createElement('textarea');
       document.body.appendChild(textDOM);
       textDOM.value =`✨${timeLine[0].title} (${timeLine[0].subtitle.slice(0,4)})
@@ -28,13 +41,29 @@ function copy(){
       document.execCommand('copy');
       document.body.removeChild(textDOM);
 }
+function showAlert(){
+  setAlertClass("visible")
+  setTimeout(()=>{
+    setAlertClass("")
+  },[3000])
+}
+function startGame(){
+  setMovieID(from)
+  setShowMovieList(false);
+  setEndGame(false)
+  setTimeLine([])
+}
+
   return (
       <div className="TimeLineCont">
-      <h2>You connected the movies in only {timeLine.length - 2} steps!</h2>
-        <button onClick={copy}>SHARE</button>
+        <h4 className={alertClass}>-COPIED TO CLIPBOARD-</h4>
+        <h2>You connected the movies in only {timeLine.length - 2} steps!</h2>
+        <div className="buttons">
+          <button onClick={copy}>SHARE</button>
+          <button onClick={()=>startGame()}><Link to={`/play/${from}/${to}`}>REPLAY</Link></button>
+        </div>
         <h3>See if you can find a shorter path</h3>
-        <button>REPLAY</button>
-        {showTimeLine}
+          {showTimeLine}
       </div>
 
 

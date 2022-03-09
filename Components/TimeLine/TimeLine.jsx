@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import './TimeLine.css'
+import './TimeLine.scss'
 
 
 const TimeLine = ({img, title, subtitle, index}) => {
+
 
   const [ stepClass, setStepClass ] = useState('timeline-step-cont')
   const [ lineClass, setLineClass ] = useState('line')

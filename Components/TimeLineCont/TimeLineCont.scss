@@ -1,0 +1,90 @@
+@import '../../global.scss';
+
+.TimeLineCont{
+    h4{
+        width: 100%;
+        position: fixed;
+        top: -200px;
+        text-align: center;
+        background-color: rgb(255, 248, 151);
+        color: rgb(109, 103, 27);
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 100;
+        font-size: 1.6rem;
+        opacity: 0;
+        transition: all 1s ease;
+
+        &.visible{
+            opacity: 1;
+            top: 50px;
+        }
+    }
+    .buttons{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        button{
+            margin: 30px;
+            width: 100px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            font-size: 1rem;
+            background-color: $mainColor;
+            cursor: pointer;
+
+            &:hover{
+                background-color: white;
+                color: $mainColor;
+                border: 2px solid $mainColor;
+            }
+            &:hover a{
+                color: $mainColor;
+            }
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+    h2{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    h3{
+        font-size: 1rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
+.TimeLineCont>.timeline-step-cont:last-child>.timeline-step{
+    
+    box-shadow: rgba(180, 175, 175, .4) 0px 0px 100px 10px, rgb(255, 243, 139) 0px 0px 0px 4px;
+
+}
+.TimeLineCont>.timeline-step-cont:last-child>.line{
+    
+    display: none;
+
+}
+.TimeLineCont>.timeline-step-cont:last-child>.timeline-step>.index{
+    
+    display: none;
+
+}
+
+@media(min-width:660px ) {
+
+
+}

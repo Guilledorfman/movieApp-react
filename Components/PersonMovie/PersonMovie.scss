@@ -9,6 +9,14 @@
     align-items: center;
     margin-bottom: 5px;
     margin-top: 5px;
+
+    h2{
+        font-size: .8rem;
+    }
+    cursor: pointer;
+    &:hover img{
+        filter: opacity(.56);
+    }
 }
 .personmovie>img{
     max-width: 60px;
@@ -25,6 +33,8 @@
         align-items: center;
         margin-bottom: 15px;
         margin-top: 15px;
+        
+
     }
     .personmovie>img{
         max-width: 100px;

@@ -17,7 +17,7 @@ const PersonMovie = ({name, img, movie_id}) => {
   
     <div className="personmovie" onClick={()=>pickMovie(movie_id)}>
       <img src={img}></img>
-      {name}
+        <h2>{name}</h2>
     </div>
     
     );
