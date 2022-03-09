@@ -7,7 +7,7 @@ const Pagination = ({pages, setPage, currentPage}) => {
 
     for (let i = 1; i <= pages; i++) {
         pagesArray.push(i);
-        console.log(pagesArray);
+
     }
 
     const pagesList = pagesArray.map((e, index)=>{

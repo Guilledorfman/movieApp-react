@@ -20,7 +20,7 @@ const CreditsCont = ({movie_ID}) => {
     },[movieID])
 
     function formatCredits(data){
-        console.log(data);
+
         let director;
         let screenplay;
         let writer;
