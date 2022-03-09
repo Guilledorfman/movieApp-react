@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { MovieListContext } from '../../context/MovieListContext';
-import './PersonMovie.css'
+import './PersonMovie.scss'
 
 
 const PersonMovie = ({name, img, movie_id}) => {

@@ -32,7 +32,7 @@ const MovieStart = ({data, id}) => {
       { showCredits ? <><CreditsCont movie_ID={id}/></> 
       
       :
-      <>
+      <div className="moviestart-cont">
       
           <img className="movie-start-img" src={IMG_PATH} alt={data.title}/>
           <span classsName="seecredits" onClick={()=>getCredits()}><SavedSearchIcon className="icon"/></span>
@@ -43,7 +43,7 @@ const MovieStart = ({data, id}) => {
 
           </div>
       
-      </>
+      </div>
       
       }
     </div>

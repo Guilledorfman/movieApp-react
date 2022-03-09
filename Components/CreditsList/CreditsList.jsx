@@ -1,5 +1,5 @@
 import Credit from '../Credit/Credit';
-import './CreditsList.css'
+import './CreditsList.scss'
 
 const CreditsList = ({data}) => {
 

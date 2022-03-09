@@ -1,9 +1,33 @@
 @import '../../global.scss';
 
+
 .topbar{
     margin-bottom: 30px;
     height: 150px;
     position: relative;
+
+    .title-cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            margin: 0;
+            margin-top: 25px;
+            font-size: 1.5rem;
+            b{
+                transform: rotateZ(35deg);
+                font-size: 2rem;
+                color: $secondaryColor;
+            }
+        }
+        h3{
+            margin: 0;
+            font-weight: 600;
+            font-size: .8rem;
+        }
+    }
     .buttons{
         width: 100%;
         button{
@@ -19,13 +43,27 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            
+        }
+        .right{
+                width: 50px;
+                height: 50px;
+                top: 10px;
+                right: 10px;
+                .icon{
+                    margin: auto;
+                    font-size: 2rem;
+                }
+            b{
+                display: none;
+            }
         }
         .left{
-            top: 30px;
-            left: 50px;
+            width: 50px;
+            height: 50px;
+            top: 10px;
+            left: 10px;
 
-            a{  
+            a{
                 width: 100%;
                 height: 100%;
                 display: flex;
@@ -33,78 +71,98 @@
                 align-items: center;
                 text-decoration: none;
                 color: white;
-
                 .icon{
                     font-size: 2rem;
                 }
-
-                b{
-                    margin-left: 5px;
-                }
-            }
-        }
-        .right{
-            top: 30px;
-            right: 50px;
-
-            .icon{
-                margin: auto;
-                margin-right: 5px;
-                font-size: 2rem;
-            }
-        }
-    }
-    .title-cont{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h1{
-            margin: 0;
-            margin-top: 60px;
-            
-            b{
-                transform: rotateZ(35deg);
-                font-size: 3rem;
-                color: $secondaryColor;
-            }
-        }
-        h3{
-            margin: 0;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-    }
-}
-
-@media(max-width:750px) {
-    .topbar{
-        .buttons{
-            .right{
-                    width: 50px;
-                    height: 50px;
-                    top: 10px;
-                    .icon{
-                        margin: auto;
-                        font-size: 2rem;
-                    }
                 b{
                     display: none;
                 }
             }
-            .left{
-                width: 50px;
-                height: 50px;
-                top: 10px;
+        }
+    }
+}
 
-                a{
+@media(min-width:660px ) {
+
+
+    .topbar{
+        margin-bottom: 30px;
+        height: 150px;
+        position: relative;
+        .buttons{
+            width: 100%;
+            button{
+                position: absolute;
+                background-color: rgba(245, 245, 220, 0);
+                font-family: $mainFont;
+                color: white;
+                font-weight: 300;
+                height: 60px;
+                width: 200px;
+                font-size: 1.3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                
+            }
+            .left{
+                top: 30px;
+                left: 50px;
+    
+                a{  
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    color: white;
+    
+                    .icon{
+                        font-size: 2rem;
+                    }
+    
                     b{
-                        display: none;
+                        margin-left: 5px;
                     }
                 }
             }
+            .right{
+                top: 30px;
+                right: 50px;
+    
+                .icon{
+                    margin: auto;
+                    margin-right: 5px;
+                    font-size: 2rem;
+                }
+            }
+        }
+        .title-cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h1{
+                margin: 0;
+                margin-top: 60px;
+                
+                b{
+                    transform: rotateZ(35deg);
+                    font-size: 3rem;
+                    color: $secondaryColor;
+                }
+            }
+            h3{
+                margin: 0;
+                font-weight: 700;
+                font-size: 1rem;
+            }
+    
         }
     }
-
 }
+
+
+

@@ -1,9 +1,17 @@
-.maincont{
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 80%;
-    // background-color: red;
-    margin: auto;
+ .maincont{
+    position: relative;
+
+}
+
+@media(min-width:660px ) {
+    .maincont{
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 80%;
+        // background-color: red;
+        margin: auto;
+    }
+
 }

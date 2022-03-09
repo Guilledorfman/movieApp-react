@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import './Credit.css'
+import './Credit.scss'
 
 import { MovieListContext } from '../../context/MovieListContext';
 
