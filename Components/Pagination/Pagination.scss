@@ -10,8 +10,20 @@
     // background-color: #eee;
     align-items: center;
     button{
-        color: black;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
         font-size: 1.5rem;
+        
+        .arrow{
+            cursor: pointer;
+            color: white;
+            font-size: 2rem;
+            
+            &.disabled{
+                color: rgba(255, 255, 255, 0.233);
+                cursor: default;
+            }
+        }
     }
     .numbers{
         margin: 5px;

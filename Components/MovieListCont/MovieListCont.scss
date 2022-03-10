@@ -9,10 +9,9 @@
     background-color: $mainColor;
 }
 
-@media(min-width:660px ) {
+@media(min-width:1300px ) {
     .movielist-cont{
         height: 400px;
-        width: 600px;
         overflow: auto;
         background-color: $mainColor;
         margin: 50px;

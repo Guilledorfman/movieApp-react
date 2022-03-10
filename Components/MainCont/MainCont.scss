@@ -3,13 +3,13 @@
 
 }
 
-@media(min-width:660px ) {
+@media(min-width:1300px ) {
     .maincont{
         display: flex;
         // flex-direction: column;
         justify-content: center;
         align-items: start;
-        width: 80%;
+        width: 90%;
         // background-color: red;
         margin: auto;
     }

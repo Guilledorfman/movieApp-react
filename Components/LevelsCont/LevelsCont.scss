@@ -10,7 +10,7 @@
     align-items: center;
     h2{
         margin-top: 60px;
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: 300;
     }
     .lvl-cont{
@@ -18,4 +18,16 @@
         margin: auto;
     }
     
+}
+@media(min-width:1300px ) {
+    .lvl-container{
+
+        h2{
+            margin-top: 60px;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        
+    }
+
 }

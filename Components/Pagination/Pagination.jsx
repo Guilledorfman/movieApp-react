@@ -1,5 +1,7 @@
 import React from 'react'
 import './Pagination.scss'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const Pagination = ({pages, setPage, currentPage}) => {
 
@@ -25,9 +27,9 @@ const Pagination = ({pages, setPage, currentPage}) => {
 
   return (
     <div className="pagination">
-        <button onClick={changePageDown}>-</button>
+        <button onClick={changePageDown}><ChevronLeftIcon className={currentPage === 1 ? "arrow disabled" : "arrow"} /></button>
             {pagesList}
-        <button onClick={changePageUp}>+</button>
+        <button onClick={changePageUp}><ChevronRightIcon className={currentPage === pages ? "arrow disabled" : "arrow"}/></button>
     </div>
   )
 }
