@@ -16,7 +16,7 @@ const Credit = ({name, id, photo, job}) => {
 
 
 function pickCredit(){
-  addToTimeLine(photo, name, job, id)
+  addToTimeLine(photo, name, job, id, '')
   setPersonID(id)
   setShowMovieList(true)
 }

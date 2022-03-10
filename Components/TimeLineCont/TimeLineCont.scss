@@ -1,9 +1,11 @@
 @import '../../global.scss';
 
 .TimeLineCont{
-    h4{
+    margin-bottom: 50px;
+    .alert{
         width: 100%;
         position: fixed;
+        left: 0;
         top: -200px;
         text-align: center;
         background-color: rgb(255, 248, 151);
@@ -85,6 +87,5 @@
 }
 
 @media(min-width:660px ) {
-
 
 }

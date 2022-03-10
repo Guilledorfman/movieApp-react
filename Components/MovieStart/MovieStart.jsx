@@ -9,7 +9,8 @@ const MovieStart = ({data, id}) => {
 
   const { addToTimeLine } = useContext(MovieListContext)
 
-  const IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`
+  let IMG_PATH;
+  data.poster_path === null ? IMG_PATH = 'https://res.cloudinary.com/dxoqq4yvo/image/upload/v1646695857/movie2movie/movieposternotfound_ry1cc0.png' : IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
   const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
   const API = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
 
@@ -20,7 +21,7 @@ const MovieStart = ({data, id}) => {
   const getCredits = async function(){
 
 
-    addToTimeLine(IMG_PATH, data.title, data.release_date, id)
+    addToTimeLine(IMG_PATH, data.title, data.release_date, id, data.original_title, data.original_language)
       
     await fetch(API).then(res=> res.json());
     setShowCredits(true)
@@ -35,10 +36,15 @@ const MovieStart = ({data, id}) => {
       <div className="moviestart-cont">
       
           <img className="movie-start-img" src={IMG_PATH} alt={data.title}/>
-          <span classsName="seecredits" onClick={()=>getCredits()}><SavedSearchIcon className="icon"/></span>
+          <span className="seecredits" onClick={()=>getCredits()}><SavedSearchIcon className="icon"/></span>
           <div className="movie-start-info">
-            <h2>{data.title}</h2>
-            {data.original_language === 'en' ?  <></> : <h4>({data.original_title})</h4>}
+          {data.original_language === 'en' ?  <h3>{data.title}</h3> : 
+            <>
+              <h3>{data.original_title}</h3>
+              <i>({data.title})</i>
+            </>
+            
+            }
             {data.release_date === undefined ? <></> : <h3>{data.release_date.slice(0,4)}</h3> }
 
           </div>

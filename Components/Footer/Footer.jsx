@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
         <h4>credits:</h4>
         <p>
-            GUILLERMO DORFMAN - 2022
+            <a href="https://guilledorfman.netlify.app" target="_blank">GUILLERMO DORFMAN</a> - 2022
         </p>
         <span>
             <a href="https://www.themoviedb.org/" target="_blank">

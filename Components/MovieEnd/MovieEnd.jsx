@@ -3,9 +3,12 @@ import './MovieEnd.scss'
 
 const MovieEnd = ({data, id}) => {
 
-    
-    const IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`
-    const BACKDROP_PATH = `https://image.tmdb.org/t/p/w500${data.backdrop_path}`
+
+    let IMG_PATH;
+    let BACKDROP_PATH;
+    data.poster_path === null ? IMG_PATH = 'https://res.cloudinary.com/dxoqq4yvo/image/upload/v1646695857/movie2movie/movieposternotfound_ry1cc0.png' : IMG_PATH = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+    data.backdrop_path === null ? BACKDROP_PATH = 'https://res.cloudinary.com/dxoqq4yvo/image/upload/v1646935386/movie2movie/a0000430_main_v4vhgz.jpg' : BACKDROP_PATH = `https://image.tmdb.org/t/p/w500${data.backdrop_path}`
+
     const [movieID, setMovieId] = useState(id);
 
 
@@ -22,8 +25,13 @@ const MovieEnd = ({data, id}) => {
             <>
                 <div style={{backgroundImage : `url(${BACKDROP_PATH})`}} className="movie">
                     <div className="movie-info">
-                        <h2>{data.title}</h2>
-                        {data.original_language === 'en' ?  <></> : <i>({data.original_title})</i>}
+            {data.original_language === 'en' ?  <h3>{data.title}</h3> : 
+            <>
+              <h3>{data.original_title}</h3>
+              <i>({data.title})</i>
+            </>
+            
+            }
                         <h3>{data.release_date.slice(0,4)}</h3>
                         
                     </div>

@@ -25,7 +25,9 @@ const MovieEndCont = ({movie_ID}) => {
                     img: IMG_PATH,
                     title: data.title,
                     subtitle: data.release_date,
-                    id: data.id
+                    id: data.id,
+                    original_title: data.original_title,
+                    language: data.original_language
                 }
                 )
 

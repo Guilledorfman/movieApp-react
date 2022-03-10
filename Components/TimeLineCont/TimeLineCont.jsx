@@ -17,11 +17,11 @@ const TimeLineCont = () => {
   
     const { timeLine } = useContext(MovieListContext)
 
-    const [ alertClass, setAlertClass ] = useState("")
+    const [ alertClass, setAlertClass ] = useState("alert")
 
     const showTimeLine =  timeLine.map((e, index)=>{
         return(
-            <TimeLine key={index} img={e.img} title={e.title} subtitle={e.subtitle} index={index}/>
+            <TimeLine key={index} img={e.img} title={e.title} subtitle={e.subtitle} index={index} original_title={e.original_title} language={e.language}/>
         )
     })
 function copy(){
@@ -29,9 +29,9 @@ function copy(){
 
   let textDOM = document.createElement('textarea');
       document.body.appendChild(textDOM);
-      textDOM.value =`✨${timeLine[0].title} (${timeLine[0].subtitle.slice(0,4)})
+      textDOM.value =`✨${timeLine[0].original_language === 'en' ? timeLine[0].title : timeLine[0].original_title } (${timeLine[0].subtitle.slice(0,4)})
 ⬇️${timeLine.length - 2} steps⬇️
-✨${timeLine[timeLine.length - 1].title}  (${timeLine[timeLine.length - 1].subtitle.slice(0,4)})
+✨${timeLine[timeLine.length - 1].title} (${timeLine[timeLine.length - 1].subtitle.slice(0,4)})
       
 🎬see if you can do it better:
       
@@ -42,9 +42,9 @@ function copy(){
       document.body.removeChild(textDOM);
 }
 function showAlert(){
-  setAlertClass("visible")
+  setAlertClass("alert visible")
   setTimeout(()=>{
-    setAlertClass("")
+    setAlertClass("alert")
   },[3000])
 }
 function startGame(){

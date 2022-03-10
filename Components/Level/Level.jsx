@@ -57,7 +57,7 @@ const Level = ({movieA, movieB}) => {
                             <b>FROM</b>
                             <span className="spantitle">
                                 <StarIcon className="star"/>
-                                <h3>{aMovie.title}</h3>
+                                <h3>{aMovie.original_title}</h3>
                             </span>
                                 <h4>-{aMovie.release_date.slice(0,4)}-</h4>
                             
@@ -86,7 +86,7 @@ const Level = ({movieA, movieB}) => {
                         <>  
                             <b>TO</b>
                             <span className="spantitle">
-                                <h3>{bMovie.title}</h3>
+                                <h3>{bMovie.original_title}</h3>
                                 <StarIcon className="star"/>
                             </span>
                             <h4>-{bMovie.release_date.slice(0,4)}-</h4>

@@ -40,9 +40,17 @@ const RandomMovie = ({movie, loading, show, clickFn, msg}) => {
       <>
         <div className={msg}>
             <b>{msg}:</b>
-            <h3>{movie.title}</h3>
-            {movie.original_language === 'en' ?  <></> : <i>({movie.original_title})</i>}
+            {movie.original_language === 'en' ?  <h3>{movie.title}</h3> : 
+            <>
+              <h3>{movie.original_title}</h3>
+              <i>({movie.title})</i>
+            </>
+            
+            }
+            {movie.release_date === undefined ? <></> :
             <h5>{movie.release_date.slice(0,4)}</h5>
+            
+            }
         </div>
         <img className="randomImg" src={IMG_PATH} alt="" />
       </>

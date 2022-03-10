@@ -21,8 +21,9 @@ function MovieListContextProvider( { children } ) {
     }
 
     function showTimeLine(){
-        addToTimeLine(goalMovie.img, goalMovie.title, goalMovie.subtitle, goalMovie.id)
+        addToTimeLine(goalMovie.img, goalMovie.title, goalMovie.subtitle, goalMovie.id, goalMovie.original_title, goalMovie.language)
         setEndGame(true)
+        console.log(goalMovie)
     }
 
     async function getFetch(URL) { 
@@ -32,18 +33,20 @@ function MovieListContextProvider( { children } ) {
 
 
     class Step {
-        constructor(img, title, subtitle, id){
+        constructor(img, title, subtitle, id, original_title, language){
             this.img = img;
             this.title = title;
             this.subtitle = subtitle;
             this.id = id;
+            this.original_title = original_title;
+            this.language = language;
         }
     }
 
-    function addToTimeLine(img, title, subtitle, id){
+    function addToTimeLine(img, title, subtitle, id, original_title, language){
         let movieYear;
         !isNaN(parseInt(subtitle)) ? movieYear = subtitle.slice(0,4) : movieYear = subtitle;
-        let newStep = new Step(img, title, movieYear, id);
+        let newStep = new Step(img, title, movieYear, id, original_title, language);
         setTimeLine([...timeLine, newStep])
     }
 

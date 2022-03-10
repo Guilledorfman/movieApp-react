@@ -14,7 +14,7 @@ const Pagination = ({pages, setPage, currentPage}) => {
 
     const pagesList = pagesArray.map((e, index)=>{
         return(
-            <b className={index +1 === currentPage ? 'numbers active' : 'numbers'} onClick={()=>{setPage(e)}}>{e}</b>
+            <b key={index} className={index +1 === currentPage ? 'numbers active' : 'numbers'} onClick={()=>{setPage(e)}}>{e}</b>
         )
     })
     function changePageUp(){

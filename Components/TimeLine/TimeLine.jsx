@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './TimeLine.scss'
 
 
-const TimeLine = ({img, title, subtitle, index}) => {
+const TimeLine = ({img, title, subtitle, index, original_title, language}) => {
 
 
   const [ stepClass, setStepClass ] = useState('timeline-step-cont')
@@ -26,7 +26,13 @@ const TimeLine = ({img, title, subtitle, index}) => {
           <h4 className='index'>{index}</h4>
           }
           <div className="info">
-            <h2>{title}</h2>
+            { language === 'en' || original_title === "" ? <h2>{title}</h2> : 
+              <>
+                <h2>{original_title}</h2>
+                <i>{title}</i>
+              </>
+            }
+
             <h3>{subtitle}</h3>
           </div>
       </div>
