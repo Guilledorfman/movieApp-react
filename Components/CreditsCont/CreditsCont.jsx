@@ -8,7 +8,7 @@ const CreditsCont = ({movie_ID}) => {
     const API_KEY = 'c4e35b2781a1c484b54009a2c4e940bf'
     const API = `https://api.themoviedb.org/3/movie/${movie_ID}/credits?api_key=${API_KEY}`;
 
-    const [movieID, setMovieID] = useState(movie_ID)
+    const [movieID] = useState(movie_ID)
     const [movieCredits, setMovieCredits] = useState({});
     const [ loading, setLoading ] = useState(true);
 

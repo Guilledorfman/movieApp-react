@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // padding-top: 30px;
     padding-bottom: 30px;
     opacity: 1;
 
@@ -30,18 +29,7 @@
             }
         }
     }
-    .level1{
-        img{
-            // margin: 10px 10px 10px 0;
-        }
-    }
-    .level2{
-        img{
-            // margin: 10px 0 10px 10px;
-        }
-        .lvl-info{
-        }
-    }
+
     .level1, .level2{
         overflow: hidden;
         position: relative;
@@ -64,8 +52,6 @@
         } 
         .circle1, .circle2, .circle3, .circle4{
             position: absolute;
-            // width: 100px;
-            // height: 100px;
             background-color: $mainColor2;
             border-radius: 100%;
             outline: 4px dotted black;
@@ -93,7 +79,6 @@
             align-items: center;
             justify-content: start;
             width: 100%;
-            // background-color: red;
             text-align: center;
 
             .spantitle{
@@ -117,7 +102,6 @@
                 margin: 0;
                 font-weight: 300;
                 font-size: .8rem;
-                // margin-top: 0;
             }
             b{
                 margin: 0;
@@ -146,7 +130,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // padding-top: 30px;
         padding-bottom: 30px;
         opacity: .7;
     
@@ -165,18 +148,6 @@
                 .circle1, .circle2, .circle3, .circle4{
                     background-color: $mainColor2
                 }
-            }
-        }
-        .level1{
-            img{
-                // margin: 10px 10px 10px 0;
-            }
-        }
-        .level2{
-            img{
-                // margin: 10px 0 10px 10px;
-            }
-            .lvl-info{
             }
         }
         .level1, .level2{
@@ -229,7 +200,6 @@
                 align-items: center;
                 justify-content: start;
                 width: 100%;
-                // background-color: red;
                 text-align: center;
     
                 .spantitle{
@@ -250,7 +220,6 @@
                 h4{
                     font-weight: 300;
                     font-size: 1.3rem;
-                    // margin-top: 0;
                 }
                 b{
                     margin-top: 20px;
